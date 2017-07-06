@@ -110,6 +110,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)bk_all:(BOOL (^)(KeyType key, ObjectType obj))block;
 
+/**
+ If object for key des not exist, calls getter block and returns result
+ */
+- (id)bk_objectForKey:(id)key withGetter:(id (^)(void))getterBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

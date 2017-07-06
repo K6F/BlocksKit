@@ -99,4 +99,16 @@
 	return result;
 }
 
+
+- (id)bk_objectForKey:(id)key withGetter:(id (^)(void))getterBlock
+{
+	__block id obj = [self objectForKey:key];
+	if (!obj && getterBlock)
+	{
+		obj = getterBlock();
+	}
+	
+	return obj;
+}
+
 @end
