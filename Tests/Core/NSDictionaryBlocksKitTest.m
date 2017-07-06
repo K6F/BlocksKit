@@ -140,4 +140,14 @@
 	XCTAssertFalse(noneSelected, @"not all values matched test");
 }
 
+- (void)testGetterBlock
+{
+	NSNumber* result = [_subject bk_objectForKey:@"4"
+																		withGetter:^(void){
+																			return @(4);
+																		}];
+	XCTAssertEqualObjects(result, @(4));
+}
+
+
 @end
