@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492A77201F0E274100864353 /* BKQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 492A771E1F0E274100864353 /* BKQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		492A77211F0E274100864353 /* BKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A771F1F0E274100864353 /* BKQueue.m */; };
+		492A77221F0E27E200864353 /* BKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A771F1F0E274100864353 /* BKQueue.m */; };
+		492A77231F0E28BD00864353 /* BKQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 492A771E1F0E274100864353 /* BKQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		492A77261F0E28D700864353 /* BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9B961B1B3A52A700940D20 /* BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4261B3A662A004B70F8 /* BKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4271B3A662A004B70F8 /* BKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4281B3A662A004B70F8 /* NSArray+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4061B3A662A004B70F8 /* NSArray+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -241,7 +246,6 @@
 		DB9B961C1B3A52A700940D20 /* BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9B961B1B3A52A700940D20 /* BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB9B96231B3A52A700940D20 /* BlocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9B96181B3A52A700940D20 /* BlocksKit.framework */; };
 		DB9B96411B3A52E500940D20 /* BlocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9B96371B3A52E500940D20 /* BlocksKit.framework */; };
-		DB9B96681B3A533900940D20 /* BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9B961B1B3A52A700940D20 /* BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBA576A31B3A7B9700E41A6B /* BKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = DBA576A21B3A7B9700E41A6B /* BKDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBA576A41B3A7B9700E41A6B /* BKDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = DBA576A21B3A7B9700E41A6B /* BKDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -328,6 +332,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		492A771E1F0E274100864353 /* BKQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKQueue.h; sourceTree = "<group>"; };
+		492A771F1F0E274100864353 /* BKQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKQueue.m; sourceTree = "<group>"; };
 		DB4CA3F91B3A624B004B70F8 /* Common-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Common-Framework.xcconfig"; sourceTree = "<group>"; };
 		DB4CA3FA1B3A624B004B70F8 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
 		DB4CA3FB1B3A624B004B70F8 /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
@@ -502,6 +508,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492A771D1F0E272F00864353 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				492A771E1F0E274100864353 /* BKQueue.h */,
+				492A771F1F0E274100864353 /* BKQueue.m */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
 		DB4CA4031B3A65FA004B70F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +528,7 @@
 		DB4CA4041B3A662A004B70F8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				492A771D1F0E272F00864353 /* Queue */,
 				DB4CA4051B3A662A004B70F8 /* BKMacros.h */,
 				DB4CA4061B3A662A004B70F8 /* NSArray+BlocksKit.h */,
 				DB4CA4071B3A662A004B70F8 /* NSArray+BlocksKit.m */,
@@ -788,6 +804,7 @@
 				DB4CA4561B3A662A004B70F8 /* NSMutableSet+BlocksKit.h in Headers */,
 				DB4CA4271B3A662A004B70F8 /* BKMacros.h in Headers */,
 				DB4CA4511B3A662A004B70F8 /* NSMutableOrderedSet+BlocksKit.h in Headers */,
+				492A77231F0E28BD00864353 /* BKQueue.h in Headers */,
 				DB4CA4AB1B3A6657004B70F8 /* A2DynamicDelegate.h in Headers */,
 				DB4CA4381B3A662A004B70F8 /* NSInvocation+BlocksKit.h in Headers */,
 				DB4CA46A1B3A662A004B70F8 /* NSOrderedSet+BlocksKit.h in Headers */,
@@ -842,13 +859,14 @@
 				DB4CA4AA1B3A6657004B70F8 /* A2DynamicDelegate.h in Headers */,
 				DB4CA46E1B3A662A004B70F8 /* NSSet+BlocksKit.h in Headers */,
 				DB4CA4B91B3A6657004B70F8 /* NSObject+A2BlockDelegate.h in Headers */,
+				492A77261F0E28D700864353 /* BlocksKit.h in Headers */,
 				DB4CA45F1B3A662A004B70F8 /* NSObject+BKBlockExecution.h in Headers */,
 				DB4CA4321B3A662A004B70F8 /* NSIndexSet+BlocksKit.h in Headers */,
 				DB4CA43C1B3A662A004B70F8 /* NSMapTable+BlocksKit.h in Headers */,
 				DBA576A31B3A7B9700E41A6B /* BKDefines.h in Headers */,
 				DB4CA44B1B3A662A004B70F8 /* NSMutableIndexSet+BlocksKit.h in Headers */,
 				DB4CA42D1B3A662A004B70F8 /* NSDictionary+BlocksKit.h in Headers */,
-				DB9B96681B3A533900940D20 /* BlocksKit.h in Headers */,
+				492A77201F0E274100864353 /* BKQueue.h in Headers */,
 				DB4CA4A51B3A6657004B70F8 /* A2BlockInvocation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -971,7 +989,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BK;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Zachary Waldowski and Pandamonia LLC";
 				TargetAttributes = {
 					DB9B96171B3A52A700940D20 = {
@@ -1071,6 +1089,7 @@
 				DB4CA4491B3A662A004B70F8 /* NSMutableDictionary+BlocksKit.m in Sources */,
 				DB4CA4301B3A662A004B70F8 /* NSDictionary+BlocksKit.m in Sources */,
 				DB4CA4B71B3A6657004B70F8 /* NSURLConnection+BlocksKit.m in Sources */,
+				492A77221F0E27E200864353 /* BKQueue.m in Sources */,
 				DB4CA4AD1B3A6657004B70F8 /* A2DynamicDelegate.m in Sources */,
 				DB4CA4BC1B3A6657004B70F8 /* NSObject+A2BlockDelegate.m in Sources */,
 				DB4CA4EE1B3A6657004B70F8 /* UIImage+BlocksKit.m in Sources */,
@@ -1158,6 +1177,7 @@
 				DB4CA4661B3A662A004B70F8 /* NSObject+BKBlockObservation.m in Sources */,
 				DB4CA4521B3A662A004B70F8 /* NSMutableOrderedSet+BlocksKit.m in Sources */,
 				DB4CA46B1B3A662A004B70F8 /* NSOrderedSet+BlocksKit.m in Sources */,
+				492A77211F0E274100864353 /* BKQueue.m in Sources */,
 				DB4CA4571B3A662A004B70F8 /* NSMutableSet+BlocksKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1273,6 +1293,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBBDD23E1B3A5782008909B0 /* Project-Debug.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				ENABLE_TESTABILITY = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -1283,6 +1309,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBBDD23F1B3A5782008909B0 /* Project-Release.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1291,6 +1323,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB4CA3FB1B3A624B004B70F8 /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1312,6 +1345,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB4CA3FB1B3A624B004B70F8 /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1435,6 +1469,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB4CA3FC1B3A624B004B70F8 /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = "BlocksKit/Module-iOS.modulemap";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = us.pandamonia.BlocksKit;
@@ -1449,6 +1484,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB4CA3FC1B3A624B004B70F8 /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = "BlocksKit/Module-iOS.modulemap";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = us.pandamonia.BlocksKit;

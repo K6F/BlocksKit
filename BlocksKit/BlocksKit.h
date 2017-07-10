@@ -54,4 +54,6 @@ FOUNDATION_EXPORT const unsigned char BlocksKitVersionString[];
 #import <BlocksKit/NSTimer+BlocksKit.h>
 #import <BlocksKit/NSCache+BlocksKit.h>
 #import <BlocksKit/NSURLConnection+BlocksKit.h>
+#import <BlocksKit/BKQueue.h>
+#import <BlocksKit/NSObject+A2BlockDelegate.h>
 

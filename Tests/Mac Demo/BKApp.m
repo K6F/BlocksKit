@@ -36,18 +36,25 @@
 #pragma mark - NSTimer+BlocksKit
 
 	// timer w/ block will bump our displayCount property and repeat itself, triggering KVO notification below
-	_tmr = [NSTimer bk_scheduledTimerWithTimeInterval:.4 block:^(NSTimer *t) { self.displayCt++; } repeats:YES];
-
+	_tmr = [NSTimer bk_scheduleTimerWithTimeInterval:.4
+																					 repeats:YES
+																				usingBlock:^(NSTimer *t) { self.displayCt++; }];
 #pragma mark - NSObject+BlockObservation
 
 	// A simpler, blocks based alternative to "observeValueForKeyPath:ofObject:change:context:"
 	// Thanks to KVO, this block "task" will get called every time our "displayCount" property changes (ie. via the timer)
 	[self bk_addObserverForKeyPath:@"displayCt" options:2 task:^(BKApp*obj,NSDictionary*change) {
-
-		// reload table and scroll to the bottom of the list when displayCt changes
-		obj.displayCt != [[obj bk_associatedValueForKey:@"assocCryns"]count]
-		? 	[obj.tv  reloadData], [obj.tv.enclosingScrollView.documentView scrollPoint:NSMakePoint(0,10000)]
-		: 	[obj.tmr invalidate]; // if displayCt == count of dicts in "crayon" array, "invalidate" timer
+		
+		if (obj.displayCt != [[obj bk_associatedValueForKey:@"assocCryns"]count])
+		{
+			// reload table and scroll to the bottom of the list when displayCt changes
+			(void)([obj.tv  reloadData]);
+			[obj.tv.enclosingScrollView.documentView scrollPoint:NSMakePoint(0,10000)];
+		}
+		else
+		{
+			[obj.tmr invalidate]; // if displayCt == count of dicts in "crayon" array, "invalidate" timer
+		}
 	}];
 
 #pragma mark - Dynamic DataSource
