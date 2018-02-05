@@ -220,6 +220,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)bk_corresponds:(NSArray *)list withBlock:(BOOL (^)(ObjectType obj1, id obj2))block;
 
+/*
+ Findes max element with criteriy
+ */
+- (ObjectType)bk_max:(CGFloat(^)(ObjectType obj))block;
+
+/*
+ Findes min element with criteriy
+ */
+- (ObjectType)bk_min:(CGFloat(^)(ObjectType obj))block;
+
 @end
 
 NS_ASSUME_NONNULL_END

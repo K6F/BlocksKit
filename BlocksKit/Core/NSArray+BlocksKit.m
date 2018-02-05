@@ -170,4 +170,49 @@
 	return result;
 }
 
+/*
+ Findes max element with criteriy
+ */
+- (id)bk_max:(CGFloat(^)(id obj))block
+{
+	__block id maxElement = [self firstObject];
+	if (maxElement)
+	{
+		__block CGFloat maxValue = block(maxElement);
+		[self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+			CGFloat value = block(obj);
+			if (value > maxValue)
+			{
+				value = maxValue;
+				maxElement = obj;
+			}
+		}];
+	}
+	
+	return maxElement;
+}
+
+/*
+ Findes min element with criteriy
+ */
+- (id)bk_min:(CGFloat(^)(id obj))block
+{
+	__block id minElement = [self firstObject];
+	if (minElement)
+	{
+		__block CGFloat minValue = block(minElement);
+		[self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+			CGFloat value = block(obj);
+			if (value > minValue)
+			{
+				value = minValue;
+				minElement = obj;
+			}
+		}];
+	}
+	
+	return minElement;
+}
+
+
 @end

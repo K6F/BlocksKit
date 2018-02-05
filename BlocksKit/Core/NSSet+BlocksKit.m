@@ -110,4 +110,50 @@
 	return result;
 }
 
+
+/*
+ Findes max element with criteriy
+ */
+- (id)bk_max:(CGFloat(^)(id obj))block
+{
+	__block id maxElement = [self anyObject];
+	if (maxElement)
+	{
+		__block CGFloat maxValue = block(maxElement);
+		[self enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+			CGFloat value = block(obj);
+			if (value > maxValue)
+			{
+				value = maxValue;
+				maxElement = obj;
+			}
+		}];
+	}
+	
+	return maxElement;
+}
+
+/*
+ Findes min element with criteriy
+ */
+- (id)bk_min:(CGFloat(^)(id obj))block
+{
+	__block id minElement = [self anyObject];
+	if (minElement)
+	{
+		__block CGFloat minValue = block(minElement);
+		[self enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+			CGFloat value = block(obj);
+			if (value > minValue)
+			{
+				value = minValue;
+				minElement = obj;
+			}
+		}];
+	}
+	
+	return minElement;
+}
+
+
 @end

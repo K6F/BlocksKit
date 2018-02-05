@@ -133,6 +133,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)bk_all:(BOOL (^)(ObjectType obj))block;
 
+/*
+ Findes max element with criteriy
+ */
+- (ObjectType)bk_max:(CGFloat(^)(ObjectType obj))block;
+
+/*
+ Findes min element with criteriy
+ */
+- (ObjectType)bk_min:(CGFloat(^)(ObjectType obj))block;
+
 @end
 
 NS_ASSUME_NONNULL_END
