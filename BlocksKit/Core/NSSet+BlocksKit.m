@@ -124,7 +124,7 @@
 			CGFloat value = block(obj);
 			if (value > maxValue)
 			{
-				value = maxValue;
+				maxValue = value;
 				maxElement = obj;
 			}
 		}];
@@ -146,7 +146,7 @@
 			CGFloat value = block(obj);
 			if (value > minValue)
 			{
-				value = minValue;
+				minValue = value;
 				minElement = obj;
 			}
 		}];
