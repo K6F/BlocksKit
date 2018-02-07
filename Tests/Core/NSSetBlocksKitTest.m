@@ -154,4 +154,33 @@
 	XCTAssertTrue(noneMatched, @"Some values matched");
 }
 
+- (void)testMin {
+	NSArray* numbers1 = @[@(1), @(2), @(3)];
+	NSNumber* min1 = [numbers1 bk_min:^(NSNumber* num){
+		return [num doubleValue];
+	}];
+	XCTAssert([min1 isEqual:@(1)], @"min should be 1");
+	
+	NSArray* numbers2 = @[@(3), @(2), @(1)];
+	NSNumber* min2 = [numbers2 bk_min:^(NSNumber* num){
+		return [num doubleValue];
+	}];
+	XCTAssert([min2 isEqual:@(1)], @"min should be 1");
+}
+
+
+- (void)testMax {
+	NSArray* numbers1 = @[@(1), @(2), @(3)];
+	NSNumber* min1 = [numbers1 bk_max:^(NSNumber* num){
+		return [num doubleValue];
+	}];
+	XCTAssert([min1 isEqual:@(3)], @"min should be 1");
+	
+	NSArray* numbers2 = @[@(3), @(2), @(1)];
+	NSNumber* min2 = [numbers2 bk_max:^(NSNumber* num){
+		return [num doubleValue];
+	}];
+	XCTAssert([min2 isEqual:@(3)], @"min should be 1");
+}
+
 @end

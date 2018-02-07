@@ -18,13 +18,6 @@ framework module BlocksKit {
       export *
     }
 
-    module MessageUI {
-      header "BlocksKit+MessageUI.h"
-      link framework "MessageUI"
-      export Dynamic
-      export *
-    }
-
     module QuickLook {
       header "BlocksKit+QuickLook.h"
       link framework "QuickLook"

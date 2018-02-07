@@ -203,7 +203,7 @@
 		__block CGFloat minValue = block(minElement);
 		[self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 			CGFloat value = block(obj);
-			if (value > minValue)
+			if (value < minValue)
 			{
 				minValue = value;
 				minElement = obj;

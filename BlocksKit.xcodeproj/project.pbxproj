@@ -12,6 +12,7 @@
 		492A77221F0E27E200864353 /* BKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A771F1F0E274100864353 /* BKQueue.m */; };
 		492A77231F0E28BD00864353 /* BKQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 492A771E1F0E274100864353 /* BKQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492A77261F0E28D700864353 /* BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9B961B1B3A52A700940D20 /* BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49E91DFB202AEBF30046C4DD /* QLPreviewController+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA48C1B3A6657004B70F8 /* QLPreviewController+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4261B3A662A004B70F8 /* BKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4271B3A662A004B70F8 /* BKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4281B3A662A004B70F8 /* NSArray+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4061B3A662A004B70F8 /* NSArray+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,7 +140,6 @@
 		DB4CA4EC1B3A6657004B70F8 /* UIImage+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4991B3A6657004B70F8 /* UIImage+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4EE1B3A6657004B70F8 /* UIImage+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA49A1B3A6657004B70F8 /* UIImage+BlocksKit.m */; };
 		DB4CA4EF1B3A6657004B70F8 /* UIImage+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA49A1B3A6657004B70F8 /* UIImage+BlocksKit.m */; };
-		DB4CA50D1B3A6720004B70F8 /* BlocksKit+MessageUI.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA5091B3A6720004B70F8 /* BlocksKit+MessageUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA50F1B3A6720004B70F8 /* BlocksKit+QuickLook.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA50A1B3A6720004B70F8 /* BlocksKit+QuickLook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA5111B3A6720004B70F8 /* BlocksKit+UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA50B1B3A6720004B70F8 /* BlocksKit+UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA5621B3A67A3004B70F8 /* BKMacrosTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA53B1B3A67A3004B70F8 /* BKMacrosTest.m */; };
@@ -190,15 +190,8 @@
 		DB4CA5A51B3A67A3004B70F8 /* NSCacheBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA5541B3A67A3004B70F8 /* NSCacheBlocksKitTest.m */; };
 		DB4CA5A71B3A67A3004B70F8 /* NSURLConnectionBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA5551B3A67A3004B70F8 /* NSURLConnectionBlocksKitTest.m */; };
 		DB4CA5A81B3A67A3004B70F8 /* NSURLConnectionBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA5551B3A67A3004B70F8 /* NSURLConnectionBlocksKitTest.m */; };
-		DB4CA5AB1B3A67A3004B70F8 /* MFMailComposeViewControllerBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA5571B3A67A3004B70F8 /* MFMailComposeViewControllerBlocksKitTest.m */; };
-		DB4CA5AE1B3A67A3004B70F8 /* MFMessageComposeViewControllerBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA5581B3A67A3004B70F8 /* MFMessageComposeViewControllerBlocksKitTest.m */; };
 		DB4CA5B11B3A67A3004B70F8 /* QLPreviewControllerBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA55A1B3A67A3004B70F8 /* QLPreviewControllerBlocksKitTest.m */; };
-		DB4CA5B41B3A67A3004B70F8 /* UIActionSheetBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA55C1B3A67A3004B70F8 /* UIActionSheetBlocksKitTest.m */; };
-		DB4CA5B71B3A67A3004B70F8 /* UIAlertViewBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA55D1B3A67A3004B70F8 /* UIAlertViewBlocksKitTest.m */; };
 		DB4CA5BA1B3A67A3004B70F8 /* UIControlBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA55E1B3A67A3004B70F8 /* UIControlBlocksKitTest.m */; };
-		DB4CA5BD1B3A67A3004B70F8 /* UIImagePickerControllerBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA55F1B3A67A3004B70F8 /* UIImagePickerControllerBlocksKitTest.m */; };
-		DB4CA5C01B3A67A3004B70F8 /* UITextFieldBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA5601B3A67A3004B70F8 /* UITextFieldBlocksKitTest.m */; };
-		DB4CA5C31B3A67A3004B70F8 /* UIWebViewBlocksKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA5611B3A67A3004B70F8 /* UIWebViewBlocksKitTest.m */; };
 		DB4CA5CD1B3A6819004B70F8 /* BKApp.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA5CA1B3A6810004B70F8 /* BKApp.m */; };
 		DB4CA5D01B3A7A08004B70F8 /* BlocksKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9B96371B3A52E500940D20 /* BlocksKit.framework */; };
 		DB4CA5D11B3A7A08004B70F8 /* BlocksKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB9B96371B3A52E500940D20 /* BlocksKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -211,7 +204,6 @@
 		DB5C6C4C1C52005900778E5F /* NSNumber+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5C6C471C52005900778E5F /* NSNumber+BlocksKit.m */; };
 		DB5C6C531C5200B200778E5F /* BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB9B961B1B3A52A700940D20 /* BlocksKit.h */; };
 		DB5C6C541C5200B200778E5F /* BKDefines.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBA576A21B3A7B9700E41A6B /* BKDefines.h */; };
-		DB5C6C551C5200B200778E5F /* BlocksKit+MessageUI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB4CA5091B3A6720004B70F8 /* BlocksKit+MessageUI.h */; };
 		DB5C6C561C5200B200778E5F /* BlocksKit+QuickLook.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB4CA50A1B3A6720004B70F8 /* BlocksKit+QuickLook.h */; };
 		DB5C6C571C5200B200778E5F /* BlocksKit+UIKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB4CA50B1B3A6720004B70F8 /* BlocksKit+UIKit.h */; };
 		DB5C6C581C5200B200778E5F /* BKMacros.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; };
@@ -294,7 +286,6 @@
 			files = (
 				DB5C6C531C5200B200778E5F /* BlocksKit.h in CopyFiles */,
 				DB5C6C541C5200B200778E5F /* BKDefines.h in CopyFiles */,
-				DB5C6C551C5200B200778E5F /* BlocksKit+MessageUI.h in CopyFiles */,
 				DB5C6C561C5200B200778E5F /* BlocksKit+QuickLook.h in CopyFiles */,
 				DB5C6C571C5200B200778E5F /* BlocksKit+UIKit.h in CopyFiles */,
 				DB5C6C581C5200B200778E5F /* BKMacros.h in CopyFiles */,
@@ -398,7 +389,6 @@
 		DB4CA4981B3A6657004B70F8 /* UIGestureRecognizer+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BlocksKit.m"; sourceTree = "<group>"; };
 		DB4CA4991B3A6657004B70F8 /* UIImage+BlocksKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BlocksKit.h"; sourceTree = "<group>"; };
 		DB4CA49A1B3A6657004B70F8 /* UIImage+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BlocksKit.m"; sourceTree = "<group>"; };
-		DB4CA5091B3A6720004B70F8 /* BlocksKit+MessageUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+MessageUI.h"; sourceTree = "<group>"; };
 		DB4CA50A1B3A6720004B70F8 /* BlocksKit+QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+QuickLook.h"; sourceTree = "<group>"; };
 		DB4CA50B1B3A6720004B70F8 /* BlocksKit+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BlocksKit+UIKit.h"; sourceTree = "<group>"; };
 		DB4CA53B1B3A67A3004B70F8 /* BKMacrosTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMacrosTest.m; sourceTree = "<group>"; };
@@ -427,15 +417,8 @@
 		DB4CA5531B3A67A3004B70F8 /* A2DynamicTestClasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A2DynamicTestClasses.m; sourceTree = "<group>"; };
 		DB4CA5541B3A67A3004B70F8 /* NSCacheBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCacheBlocksKitTest.m; sourceTree = "<group>"; };
 		DB4CA5551B3A67A3004B70F8 /* NSURLConnectionBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLConnectionBlocksKitTest.m; sourceTree = "<group>"; };
-		DB4CA5571B3A67A3004B70F8 /* MFMailComposeViewControllerBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMailComposeViewControllerBlocksKitTest.m; sourceTree = "<group>"; };
-		DB4CA5581B3A67A3004B70F8 /* MFMessageComposeViewControllerBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMessageComposeViewControllerBlocksKitTest.m; sourceTree = "<group>"; };
 		DB4CA55A1B3A67A3004B70F8 /* QLPreviewControllerBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPreviewControllerBlocksKitTest.m; sourceTree = "<group>"; };
-		DB4CA55C1B3A67A3004B70F8 /* UIActionSheetBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIActionSheetBlocksKitTest.m; sourceTree = "<group>"; };
-		DB4CA55D1B3A67A3004B70F8 /* UIAlertViewBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertViewBlocksKitTest.m; sourceTree = "<group>"; };
 		DB4CA55E1B3A67A3004B70F8 /* UIControlBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIControlBlocksKitTest.m; sourceTree = "<group>"; };
-		DB4CA55F1B3A67A3004B70F8 /* UIImagePickerControllerBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImagePickerControllerBlocksKitTest.m; sourceTree = "<group>"; };
-		DB4CA5601B3A67A3004B70F8 /* UITextFieldBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextFieldBlocksKitTest.m; sourceTree = "<group>"; };
-		DB4CA5611B3A67A3004B70F8 /* UIWebViewBlocksKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWebViewBlocksKitTest.m; sourceTree = "<group>"; };
 		DB4CA5C81B3A6810004B70F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DB4CA5C91B3A6810004B70F8 /* BKApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKApp.h; sourceTree = "<group>"; };
 		DB4CA5CA1B3A6810004B70F8 /* BKApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKApp.m; sourceTree = "<group>"; };
@@ -660,15 +643,6 @@
 			path = DynamicDelegate;
 			sourceTree = "<group>";
 		};
-		DB4CA5561B3A67A3004B70F8 /* MessageUI */ = {
-			isa = PBXGroup;
-			children = (
-				DB4CA5571B3A67A3004B70F8 /* MFMailComposeViewControllerBlocksKitTest.m */,
-				DB4CA5581B3A67A3004B70F8 /* MFMessageComposeViewControllerBlocksKitTest.m */,
-			);
-			path = MessageUI;
-			sourceTree = "<group>";
-		};
 		DB4CA5591B3A67A3004B70F8 /* QuickLook */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,12 +654,7 @@
 		DB4CA55B1B3A67A3004B70F8 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				DB4CA55C1B3A67A3004B70F8 /* UIActionSheetBlocksKitTest.m */,
-				DB4CA55D1B3A67A3004B70F8 /* UIAlertViewBlocksKitTest.m */,
 				DB4CA55E1B3A67A3004B70F8 /* UIControlBlocksKitTest.m */,
-				DB4CA55F1B3A67A3004B70F8 /* UIImagePickerControllerBlocksKitTest.m */,
-				DB4CA5601B3A67A3004B70F8 /* UITextFieldBlocksKitTest.m */,
-				DB4CA5611B3A67A3004B70F8 /* UIWebViewBlocksKitTest.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -746,7 +715,6 @@
 			children = (
 				DB9B961B1B3A52A700940D20 /* BlocksKit.h */,
 				DBA576A21B3A7B9700E41A6B /* BKDefines.h */,
-				DB4CA5091B3A6720004B70F8 /* BlocksKit+MessageUI.h */,
 				DB4CA50A1B3A6720004B70F8 /* BlocksKit+QuickLook.h */,
 				DB4CA50B1B3A6720004B70F8 /* BlocksKit+UIKit.h */,
 				DB4CA4041B3A662A004B70F8 /* Core */,
@@ -764,7 +732,6 @@
 				DB4CA53A1B3A67A3004B70F8 /* Core */,
 				DB4CA54C1B3A67A3004B70F8 /* Dynamic Delegate */,
 				DB4CA5C61B3A6810004B70F8 /* Mac Demo */,
-				DB4CA5561B3A67A3004B70F8 /* MessageUI */,
 				DB4CA5591B3A67A3004B70F8 /* QuickLook */,
 				DB4CA55B1B3A67A3004B70F8 /* UIKit */,
 				DB4CA5C51B3A67AF004B70F8 /* Supported Files */,
@@ -812,7 +779,6 @@
 				DB4CA4BF1B3A6657004B70F8 /* NSObject+A2DynamicDelegate.h in Headers */,
 				DB4CA4E71B3A6657004B70F8 /* UIGestureRecognizer+BlocksKit.h in Headers */,
 				DB4CA45B1B3A662A004B70F8 /* NSObject+BKAssociatedObjects.h in Headers */,
-				DB4CA50D1B3A6720004B70F8 /* BlocksKit+MessageUI.h in Headers */,
 				DB4CA4471B3A662A004B70F8 /* NSMutableDictionary+BlocksKit.h in Headers */,
 				DB4CA4421B3A662A004B70F8 /* NSMutableArray+BlocksKit.h in Headers */,
 				DB4CA4DD1B3A6657004B70F8 /* UIBarButtonItem+BlocksKit.h in Headers */,
@@ -857,6 +823,7 @@
 				DB4CA4461B3A662A004B70F8 /* NSMutableDictionary+BlocksKit.h in Headers */,
 				DB4CA4551B3A662A004B70F8 /* NSMutableSet+BlocksKit.h in Headers */,
 				DB4CA4AA1B3A6657004B70F8 /* A2DynamicDelegate.h in Headers */,
+				49E91DFB202AEBF30046C4DD /* QLPreviewController+BlocksKit.h in Headers */,
 				DB4CA46E1B3A662A004B70F8 /* NSSet+BlocksKit.h in Headers */,
 				DB4CA4B91B3A6657004B70F8 /* NSObject+A2BlockDelegate.h in Headers */,
 				492A77261F0E28D700864353 /* BlocksKit.h in Headers */,
@@ -1120,14 +1087,10 @@
 				DB4CA5991B3A67A3004B70F8 /* A2BlockInvocationTests.m in Sources */,
 				DB4CA58A1B3A67A3004B70F8 /* NSObjectBlocksKitTest.m in Sources */,
 				DB4CA5661B3A67A3004B70F8 /* NSArrayBlocksKitTest.m in Sources */,
-				DB4CA5B71B3A67A3004B70F8 /* UIAlertViewBlocksKitTest.m in Sources */,
 				DB4CA5631B3A67A3004B70F8 /* BKMacrosTest.m in Sources */,
-				DB4CA5B41B3A67A3004B70F8 /* UIActionSheetBlocksKitTest.m in Sources */,
 				DB4CA5A81B3A67A3004B70F8 /* NSURLConnectionBlocksKitTest.m in Sources */,
-				DB4CA5BD1B3A67A3004B70F8 /* UIImagePickerControllerBlocksKitTest.m in Sources */,
 				DB4CA5871B3A67A3004B70F8 /* NSObjectBlockObservationTest.m in Sources */,
 				DB4CA5901B3A67A3004B70F8 /* NSSetBlocksKitTest.m in Sources */,
-				DB4CA5AB1B3A67A3004B70F8 /* MFMailComposeViewControllerBlocksKitTest.m in Sources */,
 				DB4CA5841B3A67A3004B70F8 /* NSObjectAssociatedObjectTest.m in Sources */,
 				DB4CA57B1B3A67A3004B70F8 /* NSMutableIndexSetBlocksKitTest.m in Sources */,
 				DB4CA56C1B3A67A3004B70F8 /* NSIndexSetBlocksKitTest.m in Sources */,
@@ -1138,14 +1101,11 @@
 				DB4CA5B11B3A67A3004B70F8 /* QLPreviewControllerBlocksKitTest.m in Sources */,
 				DB4CA5691B3A67A3004B70F8 /* NSDictionaryBlocksKitTest.m in Sources */,
 				DB4CA56F1B3A67A3004B70F8 /* NSInvocationBlocksKitTest.m in Sources */,
-				DB4CA5C31B3A67A3004B70F8 /* UIWebViewBlocksKitTest.m in Sources */,
 				DB4CA57E1B3A67A3004B70F8 /* NSMutableOrderedSetBlocksKitTest.m in Sources */,
 				DB4CA5A21B3A67A3004B70F8 /* A2DynamicTestClasses.m in Sources */,
 				DB4CA5BA1B3A67A3004B70F8 /* UIControlBlocksKitTest.m in Sources */,
 				DB4CA5A51B3A67A3004B70F8 /* NSCacheBlocksKitTest.m in Sources */,
-				DB4CA5AE1B3A67A3004B70F8 /* MFMessageComposeViewControllerBlocksKitTest.m in Sources */,
 				DB4CA59F1B3A67A3004B70F8 /* A2DynamicTestClasses+A2BlockDelegate.m in Sources */,
-				DB4CA5C01B3A67A3004B70F8 /* UITextFieldBlocksKitTest.m in Sources */,
 				DB4CA58D1B3A67A3004B70F8 /* NSOrderedSetBlocksKitTest.m in Sources */,
 				DB4CA5811B3A67A3004B70F8 /* NSMutableSetBlocksKitTest.m in Sources */,
 			);

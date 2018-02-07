@@ -144,7 +144,7 @@
 		__block CGFloat minValue = block(minElement);
 		[self enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
 			CGFloat value = block(obj);
-			if (value > minValue)
+			if (value < minValue)
 			{
 				minValue = value;
 				minElement = obj;
