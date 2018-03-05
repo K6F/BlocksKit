@@ -24,7 +24,7 @@
 
 - (void)testSelect {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] < 300) ? YES : NO;
 		return match;
 	};
@@ -37,7 +37,7 @@
 
 - (void)testSelectedNone {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] > 400) ? YES : NO;
 		return match;
 	};
@@ -49,7 +49,7 @@
 
 - (void)testReject {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] > 300) ? YES : NO;
 		return match;
 	};
@@ -62,7 +62,7 @@
 
 - (void)testRejectedAll {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] < 400) ? YES : NO;
 		return match;
 	};
@@ -74,7 +74,7 @@
 
 - (void)testMap {
 	id(^transformBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		return [obj substringToIndex:1];
 	};
 	[_subject bk_performMap:transformBlock];

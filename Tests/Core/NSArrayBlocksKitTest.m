@@ -32,7 +32,7 @@
 
 - (void)testEach {
 	void (^senderBlock)(NSString *) = ^(NSString *sender) {
-		_total += [sender length];
+		self->_total += [sender length];
 	};
 	[_subject bk_each:senderBlock];
 	XCTAssertEqual(_total, (NSInteger)6, @"total length of \"122333\" is %ld", (long)_total);
@@ -40,7 +40,7 @@
 
 - (void)testMatch {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] == 22) ? YES : NO;
 		return match;
 	};
@@ -53,7 +53,7 @@
 
 - (void)testNotMatch {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] == 4444) ? YES : NO;
 		return match;
 	};
@@ -66,7 +66,7 @@
 
 - (void)testSelect {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] < 300) ? YES : NO;
 		return match;
 	};
@@ -79,7 +79,7 @@
 
 - (void)testSelectedNone {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] > 400) ? YES : NO;
 		return match;
 	};
@@ -91,7 +91,7 @@
 
 - (void)testReject {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] > 300) ? YES : NO;
 		return match;
 	};
@@ -104,7 +104,7 @@
 
 - (void)testRejectedAll {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] < 400) ? YES : NO;
 		return match;
 	};
@@ -116,7 +116,7 @@
 
 - (void)testMap {
 	id(^transformBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		return [obj substringToIndex:1];
 	};
 	NSArray *transformed = [_subject bk_map:transformBlock];
