@@ -36,7 +36,7 @@
 		return;
 
 	void(^senderBlock)(id) = ^(NSString *sender) {
-		_total += [sender length];
+		self->_total += [sender length];
 	};
 	[(NSOrderedSet *)_subject bk_each:senderBlock];
 	XCTAssertEqual(_total, (NSInteger)6, @"total length of \"122333\" is %ld", (long)_total);
@@ -47,7 +47,7 @@
 		return;
 	
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] == 22) ? YES : NO;
 		return match;
 	};
@@ -61,7 +61,7 @@
 		return;
 	
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] == 4444) ? YES : NO;
 		return match;
 	};
@@ -75,7 +75,7 @@
 		return;
 	
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] < 300) ? YES : NO;
 		return match;
 	};
@@ -92,7 +92,7 @@
 		return;
 	
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] > 400) ? YES : NO;
 		return match;
 	};
@@ -108,7 +108,7 @@
 		return;
 	
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] > 300) ? YES : NO;
 		return match;
 	};
@@ -125,7 +125,7 @@
 		return;
 	
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		BOOL match = ([obj intValue] < 400) ? YES : NO;
 		return match;
 	};
@@ -141,7 +141,7 @@
 		return;
 	
 	id(^transformBlock)(id) = ^(NSString *obj) {
-		_total += [obj length];
+		self->_total += [obj length];
 		return [obj substringToIndex:1];
 	};
 	NSOrderedSet *subject = _subject;

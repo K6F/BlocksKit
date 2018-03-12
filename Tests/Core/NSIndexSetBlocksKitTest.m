@@ -26,7 +26,7 @@
 	NSMutableString *order = [NSMutableString string];
 	void(^indexBlock)(NSUInteger) = ^(NSUInteger index) {
 		[order appendFormat:@"%lu", (unsigned long)index];
-		_target[index] = [NSString stringWithFormat:@"%lu", (unsigned long)index];
+		self->_target[index] = [NSString stringWithFormat:@"%lu", (unsigned long)index];
 	};
 	[_subject bk_each:indexBlock];
 	XCTAssertTrue([order isEqualToString:@"123"], @"the index loop order is %@", order);
@@ -40,7 +40,7 @@
 		[order appendFormat:@"%lu", (unsigned long)index];
 		BOOL match = NO;
 		if (index%2 == 0 ) {
-			_target[index] = [NSString stringWithFormat:@"%lu", (unsigned long)index];
+			self->_target[index] = [NSString stringWithFormat:@"%lu", (unsigned long)index];
 			match = YES;
 		}
 		return match;
@@ -92,7 +92,7 @@
 	NSMutableString *order = [NSMutableString string];
 	BOOL(^indexValidationBlock)(NSUInteger) = ^(NSUInteger index) {
 		[order appendFormat:@"%lu", (unsigned long)index];
-		BOOL match = [_target[index] isEqual:@"0"] ? YES : NO;
+		BOOL match = [self->_target[index] isEqual:@"0"] ? YES : NO;
 		return match;
 	};
 	NSIndexSet *found = [_subject bk_reject:indexValidationBlock];
@@ -104,7 +104,7 @@
     NSMutableString *order = [NSMutableString string];
     BOOL(^indexValidationBlock)(NSUInteger) = ^(NSUInteger index) {
         [order appendFormat:@"%lu", (unsigned long)index];
-        BOOL match = [_target[index] isEqual:@"0"] ? NO : YES;
+        BOOL match = [self->_target[index] isEqual:@"0"] ? NO : YES;
         return match;
     };
     NSIndexSet *found = [_subject bk_reject:indexValidationBlock];
@@ -125,7 +125,7 @@
     NSMutableString *order = [NSMutableString string];
     NSUInteger(^indexValidationBlock)(NSUInteger) = ^(NSUInteger index) {
         [order appendFormat:@"%lu", (unsigned long)index];
-        return index+_subject.count;
+        return index+self->_subject.count;
     };
     NSIndexSet *result = [_subject bk_map:indexValidationBlock];
     XCTAssertTrue([order isEqualToString:@"123"], @"the index loop order is %@", order);
@@ -149,7 +149,7 @@
 		[order appendFormat:@"%lu", (unsigned long)index];
 		BOOL match = NO;
 		if (index%2 == 0 ) {
-			_target[index] = [NSString stringWithFormat:@"%lu", (unsigned long)index];
+			self->_target[index] = [NSString stringWithFormat:@"%lu", (unsigned long)index];
 			match = YES;
 		}
 		return match;

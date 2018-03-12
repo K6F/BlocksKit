@@ -16,7 +16,7 @@
 
 @implementation A2DynamicQLPreviewControllerDelegate
 
-- (CGRect)previewController:(QLPreviewController *)controller frameForPreviewItem:(id<QLPreviewItem>)item inSourceView:(UIView **)view
+- (CGRect)previewController:(QLPreviewController *)controller frameForPreviewItem:(id<QLPreviewItem>)item inSourceView:(UIView * _Nullable * __nonnull)view
 {
 	CGRect should = CGRectZero;
 

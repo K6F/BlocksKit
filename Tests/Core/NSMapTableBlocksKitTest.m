@@ -30,7 +30,7 @@
 
 - (void)testEach {
 	void(^keyValueBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 	};
 
 	[_subject bk_each:keyValueBlock];
@@ -39,7 +39,7 @@
 
 - (void)testMatch {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 3 ? YES : NO;
 		return select;
 	};
@@ -50,7 +50,7 @@
 
 - (void)testSelect {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 3 ? YES : NO;
 		return select;
 	};
@@ -67,7 +67,7 @@
 
 - (void)testSelectedNone {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] > 4 ? YES : NO;
 		return select;
 	};
@@ -78,7 +78,7 @@
 
 - (void)testReject {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 		BOOL reject = [value intValue] < 3 ? YES : NO;
 		return reject;
 	};
@@ -94,7 +94,7 @@
 
 - (void)testRejectedAll {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 		BOOL reject = [value intValue] < 4 ? YES : NO;
 		return reject;
 	};
@@ -106,8 +106,8 @@
 
 - (void)testMap {
 	id(^transformBlock)(id, id) = ^id(id key,id value) {
-		_total += [value intValue] + [key intValue];
-		return @(_total);
+		self->_total += [value intValue] + [key intValue];
+		return @(self->_total);
 	};
 
 	NSMapTable *transformed = [_subject bk_map:transformBlock];
@@ -123,7 +123,7 @@
 
 - (void)testAny {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 3 ? YES : NO;
 		return select;
 	};
@@ -134,7 +134,7 @@
 
 - (void)testAll {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 4 ? YES : NO;
 		return select;
 	};
@@ -145,7 +145,7 @@
 
 - (void)testNone {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		_total += [value intValue] + [key intValue];
+		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 2 ? YES : NO;
 		return select;
 	};

@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490CECD120565EF500B012C3 /* NSUserDefaults+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B083AF204D41C8001EC49E /* NSUserDefaults+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492A77201F0E274100864353 /* BKQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 492A771E1F0E274100864353 /* BKQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492A77211F0E274100864353 /* BKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A771F1F0E274100864353 /* BKQueue.m */; };
 		492A77221F0E27E200864353 /* BKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A771F1F0E274100864353 /* BKQueue.m */; };
 		492A77231F0E28BD00864353 /* BKQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 492A771E1F0E274100864353 /* BKQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492A77261F0E28D700864353 /* BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9B961B1B3A52A700940D20 /* BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49B083B1204D41C8001EC49E /* NSUserDefaults+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B083AF204D41C8001EC49E /* NSUserDefaults+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49B083B2204D41C8001EC49E /* NSUserDefaults+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B083B0204D41C8001EC49E /* NSUserDefaults+BlocksKit.m */; };
+		49B083B4204D451B001EC49E /* NSUserDefaultsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B083B3204D451B001EC49E /* NSUserDefaultsTest.m */; };
+		49B083B5204D451B001EC49E /* NSUserDefaultsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B083B3204D451B001EC49E /* NSUserDefaultsTest.m */; };
+		49B083B6204D531D001EC49E /* NSUserDefaults+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B083B0204D41C8001EC49E /* NSUserDefaults+BlocksKit.m */; };
 		49E91DFB202AEBF30046C4DD /* QLPreviewController+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA48C1B3A6657004B70F8 /* QLPreviewController+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4261B3A662A004B70F8 /* BKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4271B3A662A004B70F8 /* BKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -325,6 +331,9 @@
 /* Begin PBXFileReference section */
 		492A771E1F0E274100864353 /* BKQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKQueue.h; sourceTree = "<group>"; };
 		492A771F1F0E274100864353 /* BKQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKQueue.m; sourceTree = "<group>"; };
+		49B083AF204D41C8001EC49E /* NSUserDefaults+BlocksKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+BlocksKit.h"; sourceTree = "<group>"; };
+		49B083B0204D41C8001EC49E /* NSUserDefaults+BlocksKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+BlocksKit.m"; sourceTree = "<group>"; };
+		49B083B3204D451B001EC49E /* NSUserDefaultsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsTest.m; sourceTree = "<group>"; };
 		DB4CA3F91B3A624B004B70F8 /* Common-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Common-Framework.xcconfig"; sourceTree = "<group>"; };
 		DB4CA3FA1B3A624B004B70F8 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
 		DB4CA3FB1B3A624B004B70F8 /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
@@ -547,6 +556,8 @@
 				DB4CA4231B3A662A004B70F8 /* NSSet+BlocksKit.m */,
 				DB4CA4241B3A662A004B70F8 /* NSTimer+BlocksKit.h */,
 				DB4CA4251B3A662A004B70F8 /* NSTimer+BlocksKit.m */,
+				49B083AF204D41C8001EC49E /* NSUserDefaults+BlocksKit.h */,
+				49B083B0204D41C8001EC49E /* NSUserDefaults+BlocksKit.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -622,6 +633,7 @@
 				DB4CA5491B3A67A3004B70F8 /* NSOrderedSetBlocksKitTest.m */,
 				DB4CA54A1B3A67A3004B70F8 /* NSSetBlocksKitTest.m */,
 				DB4CA54B1B3A67A3004B70F8 /* NSTimerBlocksKitTest.m */,
+				49B083B3204D451B001EC49E /* NSUserDefaultsTest.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -793,6 +805,7 @@
 				DB5C6C491C52005900778E5F /* NSNumber+BlocksKit.h in Headers */,
 				DB4CA4651B3A662A004B70F8 /* NSObject+BKBlockObservation.h in Headers */,
 				DB4CA43D1B3A662A004B70F8 /* NSMapTable+BlocksKit.h in Headers */,
+				490CECD120565EF500B012C3 /* NSUserDefaults+BlocksKit.h in Headers */,
 				DB4CA4291B3A662A004B70F8 /* NSArray+BlocksKit.h in Headers */,
 				DB4CA4E21B3A6657004B70F8 /* UIControl+BlocksKit.h in Headers */,
 				DB4CA5111B3A6720004B70F8 /* BlocksKit+UIKit.h in Headers */,
@@ -833,6 +846,7 @@
 				DBA576A31B3A7B9700E41A6B /* BKDefines.h in Headers */,
 				DB4CA44B1B3A662A004B70F8 /* NSMutableIndexSet+BlocksKit.h in Headers */,
 				DB4CA42D1B3A662A004B70F8 /* NSDictionary+BlocksKit.h in Headers */,
+				49B083B1204D41C8001EC49E /* NSUserDefaults+BlocksKit.h in Headers */,
 				492A77201F0E274100864353 /* BKQueue.h in Headers */,
 				DB4CA4A51B3A6657004B70F8 /* A2BlockInvocation.h in Headers */,
 			);
@@ -956,7 +970,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BK;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Zachary Waldowski and Pandamonia LLC";
 				TargetAttributes = {
 					DB9B96171B3A52A700940D20 = {
@@ -1050,6 +1064,7 @@
 				DB4CA44E1B3A662A004B70F8 /* NSMutableIndexSet+BlocksKit.m in Sources */,
 				DB4CA4761B3A662A004B70F8 /* NSTimer+BlocksKit.m in Sources */,
 				DB4CA4A81B3A6657004B70F8 /* A2BlockInvocation.m in Sources */,
+				49B083B6204D531D001EC49E /* NSUserDefaults+BlocksKit.m in Sources */,
 				DB4CA4351B3A662A004B70F8 /* NSIndexSet+BlocksKit.m in Sources */,
 				DB4CA4D01B3A6657004B70F8 /* QLPreviewController+BlocksKit.m in Sources */,
 				DB4CA42B1B3A662A004B70F8 /* NSArray+BlocksKit.m in Sources */,
@@ -1095,6 +1110,7 @@
 				DB4CA57B1B3A67A3004B70F8 /* NSMutableIndexSetBlocksKitTest.m in Sources */,
 				DB4CA56C1B3A67A3004B70F8 /* NSIndexSetBlocksKitTest.m in Sources */,
 				DB4CA5721B3A67A3004B70F8 /* NSMapTableBlocksKitTest.m in Sources */,
+				49B083B5204D451B001EC49E /* NSUserDefaultsTest.m in Sources */,
 				DB4CA5931B3A67A3004B70F8 /* NSTimerBlocksKitTest.m in Sources */,
 				DB4CA59C1B3A67A3004B70F8 /* A2DynamicDelegateTests.m in Sources */,
 				DB4CA5781B3A67A3004B70F8 /* NSMutableDictionaryBlocksKitTest.m in Sources */,
@@ -1129,6 +1145,7 @@
 				DB4CA4611B3A662A004B70F8 /* NSObject+BKBlockExecution.m in Sources */,
 				DB4CA4391B3A662A004B70F8 /* NSInvocation+BlocksKit.m in Sources */,
 				DB4CA4701B3A662A004B70F8 /* NSSet+BlocksKit.m in Sources */,
+				49B083B2204D41C8001EC49E /* NSUserDefaults+BlocksKit.m in Sources */,
 				DB4CA4B11B3A6657004B70F8 /* NSCache+BlocksKit.m in Sources */,
 				DB4CA4431B3A662A004B70F8 /* NSMutableArray+BlocksKit.m in Sources */,
 				DB4CA4C01B3A6657004B70F8 /* NSObject+A2DynamicDelegate.m in Sources */,
@@ -1157,6 +1174,7 @@
 				DB4CA58F1B3A67A3004B70F8 /* NSSetBlocksKitTest.m in Sources */,
 				DB4CA5831B3A67A3004B70F8 /* NSObjectAssociatedObjectTest.m in Sources */,
 				DB4CA57A1B3A67A3004B70F8 /* NSMutableIndexSetBlocksKitTest.m in Sources */,
+				49B083B4204D451B001EC49E /* NSUserDefaultsTest.m in Sources */,
 				DB4CA56B1B3A67A3004B70F8 /* NSIndexSetBlocksKitTest.m in Sources */,
 				DB4CA5711B3A67A3004B70F8 /* NSMapTableBlocksKitTest.m in Sources */,
 				DB4CA5921B3A67A3004B70F8 /* NSTimerBlocksKitTest.m in Sources */,
@@ -1256,6 +1274,7 @@
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1272,6 +1291,7 @@
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

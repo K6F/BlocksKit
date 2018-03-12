@@ -51,7 +51,7 @@
 	NSMutableString *order = [NSMutableString string];
 	BOOL(^indexValidationBlock)(NSUInteger index) = ^(NSUInteger index) {
 		[order appendFormat:@"%lu", (unsigned long)index];
-		BOOL match = [_target[index] isEqual:@"0"] ? YES : NO;
+		BOOL match = [self->_target[index] isEqual:@"0"] ? YES : NO;
 		return match;
 	};
 	[_subject bk_performReject:indexValidationBlock];
@@ -63,7 +63,7 @@
 	NSMutableString *order = [NSMutableString string];
 	BOOL(^indexValidationBlock)(NSUInteger index) = ^(NSUInteger index) {
 		[order appendFormat:@"%lu", (unsigned long)index];
-		BOOL match = [_target[index] isEqual:@"0"] ? NO : YES;
+		BOOL match = [self->_target[index] isEqual:@"0"] ? NO : YES;
 		return match;
 	};
 	[_subject bk_performReject:indexValidationBlock];
