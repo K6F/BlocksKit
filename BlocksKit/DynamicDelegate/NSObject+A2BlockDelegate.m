@@ -27,7 +27,7 @@ static BOOL bk_object_isKindOfClass(id obj, Class testClass)
 	return isKindOfClass;
 }
 
-static Protocol *a2_protocolForDelegatingObject(id obj, Protocol *protocol)
+static Protocol *a2B_protocolForDelegatingObject(id obj, Protocol *protocol)
 {
 	NSString *protocolName = NSStringFromProtocol(protocol);
 	if ([protocolName hasSuffix:@"Delegate"]) {
@@ -171,7 +171,7 @@ static NSString *A2BlockDelegateInfoDescribe(const void *__unused item) {
 }
 
 static inline A2DynamicDelegate *getDynamicDelegate(NSObject *delegatingObject, Protocol *protocol, const A2BlockDelegateInfo *info, BOOL ensuring) {
-	A2DynamicDelegate *dynamicDelegate = [delegatingObject bk_dynamicDelegateForProtocol:a2_protocolForDelegatingObject(delegatingObject, protocol)];
+	A2DynamicDelegate *dynamicDelegate = [delegatingObject bk_dynamicDelegateForProtocol:a2B_protocolForDelegatingObject(delegatingObject, protocol)];
 
 	if (!info || !info->setter || !info->getter) {
 		return dynamicDelegate;
@@ -342,7 +342,7 @@ typedef A2DynamicDelegate *(^A2GetDynamicDelegateBlock)(NSObject *, BOOL);
 
 	if (![self instancesRespondToSelector:getter]) {
 		IMP getterImplementation = imp_implementationWithBlock(^(NSObject *delegatingObject) {
-			return [delegatingObject bk_dynamicDelegateForProtocol:a2_protocolForDelegatingObject(delegatingObject, protocol)];
+			return [delegatingObject bk_dynamicDelegateForProtocol:a2B_protocolForDelegatingObject(delegatingObject, protocol)];
 		});
 
 		addMethodWithIMP(self, getter, NULL, getterImplementation, "@@:", NO);
