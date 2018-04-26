@@ -54,7 +54,7 @@ static const void *BKGestureRecognizerShouldHandleActionKey = &BKGestureRecogniz
 	
 	NSTimeInterval delay = self.bk_handlerDelay;
 	CGPoint location = [self locationInView:self.view];
-  UIGestureRecognizerState state = self.state;
+    UIGestureRecognizerState state = self.state;
 	void (^block)(void) = ^{
 		if (!self.bk_shouldHandleAction) return;
 		handler(self, state, location);
