@@ -133,7 +133,7 @@
 										@"textViewDidBeginEditing:",
 									
 									@"bk_shouldEndEditingBlock":
-										@"textViewDidBeginEditing:",
+										@"textViewShouldEndEditing:",
 									
 									@"bk_didEndEditingBlock" :
 										@"textViewDidEndEditing:",
