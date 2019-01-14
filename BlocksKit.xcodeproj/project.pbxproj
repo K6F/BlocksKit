@@ -13,6 +13,8 @@
 		492A77221F0E27E200864353 /* BKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A771F1F0E274100864353 /* BKQueue.m */; };
 		492A77231F0E28BD00864353 /* BKQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 492A771E1F0E274100864353 /* BKQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		492A77261F0E28D700864353 /* BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9B961B1B3A52A700940D20 /* BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		497436FD21EC46FB003EA4BA /* UIGestureRecognizerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 497436FC21EC46FB003EA4BA /* UIGestureRecognizerTest.m */; };
+		4974370021EC4768003EA4BA /* BKTestGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 497436FF21EC4768003EA4BA /* BKTestGestureRecognizer.m */; };
 		49B083B1204D41C8001EC49E /* NSUserDefaults+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B083AF204D41C8001EC49E /* NSUserDefaults+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49B083B2204D41C8001EC49E /* NSUserDefaults+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B083B0204D41C8001EC49E /* NSUserDefaults+BlocksKit.m */; };
 		49B083B4204D451B001EC49E /* NSUserDefaultsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B083B3204D451B001EC49E /* NSUserDefaultsTest.m */; };
@@ -331,6 +333,10 @@
 /* Begin PBXFileReference section */
 		492A771E1F0E274100864353 /* BKQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKQueue.h; sourceTree = "<group>"; };
 		492A771F1F0E274100864353 /* BKQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKQueue.m; sourceTree = "<group>"; };
+		497436FB21EC46FB003EA4BA /* UIGestureRecognizerTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIGestureRecognizerTest.h; sourceTree = "<group>"; };
+		497436FC21EC46FB003EA4BA /* UIGestureRecognizerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIGestureRecognizerTest.m; sourceTree = "<group>"; };
+		497436FE21EC4768003EA4BA /* BKTestGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKTestGestureRecognizer.h; sourceTree = "<group>"; };
+		497436FF21EC4768003EA4BA /* BKTestGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKTestGestureRecognizer.m; sourceTree = "<group>"; };
 		49B083AF204D41C8001EC49E /* NSUserDefaults+BlocksKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+BlocksKit.h"; sourceTree = "<group>"; };
 		49B083B0204D41C8001EC49E /* NSUserDefaults+BlocksKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+BlocksKit.m"; sourceTree = "<group>"; };
 		49B083B3204D451B001EC49E /* NSUserDefaultsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsTest.m; sourceTree = "<group>"; };
@@ -667,6 +673,10 @@
 			isa = PBXGroup;
 			children = (
 				DB4CA55E1B3A67A3004B70F8 /* UIControlBlocksKitTest.m */,
+				497436FE21EC4768003EA4BA /* BKTestGestureRecognizer.h */,
+				497436FF21EC4768003EA4BA /* BKTestGestureRecognizer.m */,
+				497436FB21EC46FB003EA4BA /* UIGestureRecognizerTest.h */,
+				497436FC21EC46FB003EA4BA /* UIGestureRecognizerTest.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1110,6 +1120,7 @@
 				DB4CA57B1B3A67A3004B70F8 /* NSMutableIndexSetBlocksKitTest.m in Sources */,
 				DB4CA56C1B3A67A3004B70F8 /* NSIndexSetBlocksKitTest.m in Sources */,
 				DB4CA5721B3A67A3004B70F8 /* NSMapTableBlocksKitTest.m in Sources */,
+				497436FD21EC46FB003EA4BA /* UIGestureRecognizerTest.m in Sources */,
 				49B083B5204D451B001EC49E /* NSUserDefaultsTest.m in Sources */,
 				DB4CA5931B3A67A3004B70F8 /* NSTimerBlocksKitTest.m in Sources */,
 				DB4CA59C1B3A67A3004B70F8 /* A2DynamicDelegateTests.m in Sources */,
@@ -1117,6 +1128,7 @@
 				DB4CA5B11B3A67A3004B70F8 /* QLPreviewControllerBlocksKitTest.m in Sources */,
 				DB4CA5691B3A67A3004B70F8 /* NSDictionaryBlocksKitTest.m in Sources */,
 				DB4CA56F1B3A67A3004B70F8 /* NSInvocationBlocksKitTest.m in Sources */,
+				4974370021EC4768003EA4BA /* BKTestGestureRecognizer.m in Sources */,
 				DB4CA57E1B3A67A3004B70F8 /* NSMutableOrderedSetBlocksKitTest.m in Sources */,
 				DB4CA5A21B3A67A3004B70F8 /* A2DynamicTestClasses.m in Sources */,
 				DB4CA5BA1B3A67A3004B70F8 /* UIControlBlocksKitTest.m in Sources */,

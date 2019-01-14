@@ -10,10 +10,12 @@
 static const void *BKGestureRecognizerBlockKey = &BKGestureRecognizerBlockKey;
 static const void *BKGestureRecognizerDelayKey = &BKGestureRecognizerDelayKey;
 static const void *BKGestureRecognizerShouldHandleActionKey = &BKGestureRecognizerShouldHandleActionKey;
+static const void *BKGestureRecognizerTargetSetted = &BKGestureRecognizerTargetSetted;
 
 @interface UIGestureRecognizer (BlocksKitInternal)
 
 @property (nonatomic, setter = bk_setShouldHandleAction:) BOOL bk_shouldHandleAction;
+@property (nonatomic, setter= bk_setTargetSetted:) BOOL bk_targetSetted;
 
 - (void)bk_handleAction:(UIGestureRecognizer *)recognizer;
 
@@ -31,6 +33,7 @@ static const void *BKGestureRecognizerShouldHandleActionKey = &BKGestureRecogniz
 	self = [self initWithTarget:self action:@selector(bk_handleAction:)];
 	if (!self) return nil;
 
+	self.bk_targetSetted = YES;
 	self.bk_handler = block;
 	self.bk_handlerDelay = delay;
 
@@ -67,6 +70,22 @@ static const void *BKGestureRecognizerShouldHandleActionKey = &BKGestureRecogniz
 - (void)bk_setHandler:(void (^)(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location))handler
 {
 	objc_setAssociatedObject(self, BKGestureRecognizerBlockKey, handler, OBJC_ASSOCIATION_COPY_NONATOMIC);
+	if (handler)
+	{
+		if (!self.bk_targetSetted)
+		{
+			[self addTarget:self action:@selector(bk_handleAction:)];
+			self.bk_targetSetted = YES;
+		}
+	}
+	else
+	{
+		if (self.bk_targetSetted)
+		{
+			[self removeTarget:self action:@selector(bk_handleAction:)];
+			self.bk_targetSetted = NO;
+		}
+	}
 }
 
 - (void (^)(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location))bk_handler
@@ -99,5 +118,25 @@ static const void *BKGestureRecognizerShouldHandleActionKey = &BKGestureRecogniz
 {
 	self.bk_shouldHandleAction = NO;
 }
+
+
+- (BOOL)bk_targetSetted
+{
+	BOOL setted = NO;
+	NSNumber* settedValue = objc_getAssociatedObject(self, BKGestureRecognizerTargetSetted);
+	if (settedValue)
+	{
+		setted = [settedValue boolValue];
+	}
+	
+	return settedValue;
+}
+
+
+- (void)bk_setTargetSetted:(BOOL)bk_targetSetted
+{
+	objc_setAssociatedObject(self, BKGestureRecognizerTargetSetted, @(bk_targetSetted), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 
 @end
