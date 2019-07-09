@@ -15,7 +15,7 @@
 - (void)testAsyncConnection {
 	XCTestExpectation *expectation = [self expectationWithDescription:@"Block callbacks reached"];
 
-	NSURL *URL = [NSURL URLWithString:@"http://google.com/"];
+	NSURL *URL = [NSURL URLWithString:@"http://127.0.0.1"];
 	NSURLRequest *request = [NSURLRequest requestWithURL:URL];
 	NSURLConnection *conn = [[NSURLConnection alloc] bk_initWithRequest:request];
 	conn.bk_successBlock = ^(NSURLConnection *connection, NSURLResponse *response, NSData *data) {
@@ -27,7 +27,7 @@
 	
 	[conn start];
 	
-	[self waitForExpectationsWithTimeout:10 handler:NULL];
+	[self waitForExpectationsWithTimeout:20 handler:NULL];
 }
 
 @end

@@ -57,4 +57,6 @@ FOUNDATION_EXPORT const unsigned char BlocksKitVersionString[];
 #import <BlocksKit/BKQueue.h>
 #import <BlocksKit/NSObject+A2BlockDelegate.h>
 #import <BlocksKit/NSUserDefaults+BlocksKit.h>
+#import <BlocksKit/BKConcurrentEnumerator.h>
+#import <BlocksKit/BKConcurrentArray.h>
 

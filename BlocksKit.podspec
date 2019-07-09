@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'BlocksKit'
-  s.version               = '2.4.3'
+  s.version               = '2.5.0'
   s.license               = 'MIT'
   s.summary               = 'The Objective-C block utilities you always wish you had.'
   s.homepage              = 'https://github.com/K-Be/BlocksKit'
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Core' do |ss|
-    ss.source_files = 'BlocksKit/BlocksKit.h', 'BlocksKit/BKDefines.h', 'BlocksKit/Core/*.{h,m}', 'BlocksKit/Core/Queue/*.{h,m}'
+    ss.source_files = 'BlocksKit/BlocksKit.h', 'BlocksKit/BKDefines.h', 'BlocksKit/Core/*.{h,m}', 'BlocksKit/Core/Queue/*.{h,m}', 'BlocksKit/Concurrency/*.{h,m}'
   end
 
   s.subspec 'DynamicDelegate' do |ss|
