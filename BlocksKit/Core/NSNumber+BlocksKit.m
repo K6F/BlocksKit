@@ -16,4 +16,18 @@
   }
 }
 
+
+- (void)bk_concurrently:(void(^)(void))block
+{
+	if (self.integerValue >= 0)
+	{
+		NSIndexSet* indexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self.integerValue)];
+		[indexes enumerateIndexesWithOptions:NSEnumerationConcurrent
+															usingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+																block();
+															}];
+	}
+}
+
+
 @end

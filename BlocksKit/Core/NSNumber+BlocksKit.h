@@ -24,4 +24,11 @@
  */
 - (void)bk_times:(void (^)(void))block;
 
+/** Performs a block `self` number of times concurrently
+ 
+ @param block A void-returning code block that accepts no arguments.
+*/
+- (void)bk_concurrently:(void(^)(void))block;
+
+
 @end
