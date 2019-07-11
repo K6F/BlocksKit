@@ -7,7 +7,7 @@
 //
 
 #import "BKConcurrentArray.h"
-
+#import "BKLock.h"
 
 @interface BKConcurrentArray ()
 
@@ -159,7 +159,7 @@
 - (NSArray *)bk_map:(id (^)(id obj))block
 {
 	NSMutableArray* result = [[NSMutableArray alloc] initWithCapacity:self.count];
-	dispatch_semaphore_t lock = dispatch_semaphore_create(1);
+	BKLock* sync = [[BKLock alloc] init];
 	[self.objects enumerateObjectsWithOptions:NSEnumerationConcurrent
 																 usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 																	 id processed = block(obj);
@@ -167,9 +167,9 @@
 																	 {
 																		 processed = [NSNull null];
 																	 }
-																	 dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-																	 [result addObject:processed];
-																	 dispatch_semaphore_signal(lock);
+																	 [sync exec:^{
+																		 [result addObject:processed];
+																	 }];
 																 }];
 	return result;
 }
@@ -183,15 +183,15 @@
 - (NSArray *)bk_compact:(id (^)(id obj))block
 {
 	NSMutableArray* result = [[NSMutableArray alloc] initWithCapacity:self.count];
-	dispatch_semaphore_t lock = dispatch_semaphore_create(1);
+	BKLock* sync = [[BKLock alloc] init];
 	[self.objects enumerateObjectsWithOptions:NSEnumerationConcurrent
 																 usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 																	 id processed = block(obj);
 																	 if (processed)
 																	 {
-																		 dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-																		 [result addObject:processed];
-																		 dispatch_semaphore_signal(lock);
+																		 [sync exec:^{
+																			 [result addObject:processed];
+																		 }];
 																	 }
 																 }];
 	return result;
@@ -295,19 +295,23 @@
  */
 - (nullable id)bk_max:(CGFloat(^)(id obj))block
 {
-	__block CGFloat maxVal = -CGFLOAT_MAX;
-	__block id maxObject = nil;
-	dispatch_semaphore_t lock = dispatch_semaphore_create(1);
-	[self bk_each:^(id  _Nonnull obj) {
-		CGFloat value = block(obj);
-		dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-		if (value > maxVal)
-		{
-			maxVal = value;
-			maxObject = obj;
-		}
-		dispatch_semaphore_signal(lock);
-	}];
+	__block id maxObject = self.objects.firstObject;
+	
+	if (maxObject)
+	{
+		__block CGFloat maxVal = block(maxObject);
+		BKLock* sync = [[BKLock alloc] init];
+		[self bk_each:^(id  _Nonnull obj) {
+			CGFloat value = block(obj);
+			[sync exec:^{
+				if (value > maxVal)
+				{
+					maxVal = value;
+					maxObject = obj;
+				}
+			}];
+		}];
+	}
 	
 	return maxObject;
 }
@@ -318,19 +322,22 @@
  */
 - (nullable id)bk_min:(CGFloat(^)(id obj))block
 {
-	__block CGFloat minVal = CGFLOAT_MAX;
-	__block id minObject = nil;
-	dispatch_semaphore_t lock = dispatch_semaphore_create(1);
-	[self bk_each:^(id  _Nonnull obj) {
-		CGFloat value = block(obj);
-		dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-		if (value < minVal)
-		{
-			minObject = obj;
-			minVal = value;
-		}
-		dispatch_semaphore_signal(lock);
-	}];
+	__block id minObject = self.objects.firstObject;
+	if (minObject)
+	{
+		__block CGFloat minVal = block(minObject);
+		BKLock* sync = [[BKLock alloc] init];
+		[self bk_each:^(id  _Nonnull obj) {
+			CGFloat value = block(obj);
+			[sync exec:^{
+				if (value < minVal)
+				{
+					minObject = obj;
+					minVal = value;
+				}
+			}];
+		}];
+	}
 	
 	return minObject;
 }

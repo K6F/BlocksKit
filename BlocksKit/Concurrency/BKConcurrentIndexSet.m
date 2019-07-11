@@ -7,6 +7,7 @@
 //
 
 #import "BKConcurrentIndexSet.h"
+#import "BKLock.h"
 
 
 @interface BKConcurrentIndexSet ()
@@ -129,13 +130,13 @@
 - (NSIndexSet *)bk_map:(NSUInteger (^)(NSUInteger index))block
 {
 	NSMutableIndexSet* indexes = [NSMutableIndexSet indexSet];
-	dispatch_semaphore_t lock = dispatch_semaphore_create(1);
+	BKLock* sync = [[BKLock alloc] init];
 	[self.indexes enumerateIndexesWithOptions:NSEnumerationConcurrent
 																 usingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
 																	 NSUInteger index = block(idx);
-																	 dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-																	 [indexes addIndex:index];
-																	 dispatch_semaphore_signal(lock);
+																	 [sync exec:^{
+																		 [indexes addIndex:index];
+																	 }];
 																 }];
 	return indexes;
 }
@@ -156,13 +157,13 @@
 - (NSArray *)bk_mapIndex:(id (^)(NSUInteger index))block
 {
 	NSMutableArray* items = [[NSMutableArray alloc] initWithCapacity:self.indexes.count];
-	dispatch_semaphore_t lock = dispatch_semaphore_create(1);
+	BKLock* sync = [[BKLock alloc] init];
 	[self.indexes enumerateIndexesWithOptions:NSEnumerationConcurrent
 																 usingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
 																	 id obj = block(idx);
-																	 dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-																	 [items addObject:obj];
-																	 dispatch_semaphore_signal(lock);
+																	 [sync exec:^{
+																		 [items addObject:obj];
+																	 }];
 																 }];
 	return items;
 }

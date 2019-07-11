@@ -1,49 +1,56 @@
 //
-//  NSSetBlocksKitTest.m
-//  BlocksKit Unit Tests
+//  BKConcurrentSetTest.m
+//  BlocksKit
 //
-//  Contributed by Kai Wu.
+//  Created by Andrew Romanov on 11/07/2019.
+//  Copyright © 2019 Zachary Waldowski and Pandamonia LLC. All rights reserved.
 //
 
-@import XCTest;
-@import BlocksKit;
+#import <XCTest/XCTest.h>
+#import "BKConcurrentSet.h"
+#import "BKLock.h"
 
-@interface NSSetBlocksKitTest : XCTestCase
+@interface BKConcurrentSetTest : XCTestCase
 
 @end
 
-@implementation NSSetBlocksKitTest {
-	NSSet *_subject;
+
+@implementation BKConcurrentSetTest {
+	BKConcurrentSet *_subject;
 	NSInteger _total;
 }
 
 - (void)setUp {
-	_subject = [NSSet setWithArray:@[ @"1", @"22", @"333" ]];
+	_subject = [NSSet setWithArray:@[ @"1", @"22", @"333" ]].bk_concurrent;
 	_total = 0;
 }
 
 - (void)testEach {
+	BKLock* sync = [[BKLock alloc] init];
 	void(^senderBlock)(id) = ^(NSString *sender) {
-		self->_total += [sender length];
+		[sync exec:^{
+			self->_total += [sender length];
+		}];
 	};
 	[_subject bk_each:senderBlock];
-	XCTAssertEqual(_total,(NSInteger)6,@"total length of \"122333\" is %ld", (long)_total);
+	XCTAssertEqual(_total, (NSInteger)6, @"total length of \"122333\" is %ld", (long)_total);
 }
 
 - (void)testMatch {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
 		BOOL match = ([obj intValue] == 22) ? YES : NO;
 		return match;
 	};
 	id found = [_subject bk_match:validationBlock];
-	XCTAssertEqual(_total,(NSInteger)3,@"total length of \"122\" is %ld", (long)_total);
-	XCTAssertEqual(found,@"22",@"matched object is %@",found);
+	XCTAssertEqual(found, @"22",@"matched object is %@",found);
 }
 
 - (void)testNotMatch {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
+		[sync exec:^{
+			self->_total += [obj length];
+		}];
 		BOOL match = ([obj intValue] == 4444) ? YES : NO;
 		return match;
 	};
@@ -53,44 +60,56 @@
 }
 
 - (void)testSelect {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
+		[sync exec:^{
+			self->_total += [obj length];
+		}];
 		BOOL match = ([obj intValue] < 300) ? YES : NO;
 		return match;
 	};
 	NSSet *found = [_subject bk_select:validationBlock];
-
-	XCTAssertEqual(_total,(NSInteger)6,@"total length of \"122333\" is %ld", (long)_total);
+	
+	XCTAssertEqual(_total, (NSInteger)6, @"total length of \"122333\" is %ld", (long)_total);
 	NSSet *target = [NSSet setWithArray:@[ @"1", @"22" ]];
 	XCTAssertEqualObjects(found,target,@"selected items are %@",found);
 }
 
 - (void)testSelectedNone {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
+		[sync exec:^{
+			self->_total += [obj length];
+		}];
 		BOOL match = ([obj intValue] > 400) ? YES : NO;
 		return match;
 	};
 	NSSet *found = [_subject bk_select:validationBlock];
-	XCTAssertEqual(_total,(NSInteger)6,@"total length of \"122333\" is %ld", (long)_total);
+	XCTAssertEqual(_total,(NSInteger)6, @"total length of \"122333\" is %ld", (long)_total);
 	XCTAssertTrue(found.count == 0,@"no item is selected");
 }
 
 - (void)testReject {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
+		[sync exec:^{
+			self->_total += [obj length];
+		}];
 		BOOL match = ([obj intValue] > 300) ? YES : NO;
 		return match;
 	};
 	NSSet *left = [_subject bk_reject:validationBlock];
-	XCTAssertEqual(_total,(NSInteger)6,@"total length of \"122333\" is %ld", (long)_total);
+	XCTAssertEqual(_total, (NSInteger)6, @"total length of \"122333\" is %ld", (long)_total);
 	NSSet *target = [NSSet setWithArray:@[ @"1", @"22" ]];
-	XCTAssertEqualObjects(left,target,@"not rejected items are %@",left);
+	XCTAssertEqualObjects(left, target, @"not rejected items are %@",left);
 }
 
 - (void)testRejectedAll {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
+		[sync exec:^{
+			self->_total += [obj length];
+		}];
 		BOOL match = ([obj intValue] < 400) ? YES : NO;
 		return match;
 	};
@@ -100,39 +119,36 @@
 }
 
 - (void)testMap {
+	BKLock* sync = [[BKLock alloc] init];
 	id(^transformBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
+		[sync exec:^{
+			self->_total += [obj length];
+		}];
 		return [obj substringToIndex:1];
 	};
 	NSSet *transformed = [_subject bk_map:transformBlock];
-
+	
 	XCTAssertEqual(_total,(NSInteger)6,@"total length of \"122333\" is %ld", (long)_total);
 	NSSet *target = [NSSet setWithArray:@[ @"1", @"2", @"3" ]];
 	XCTAssertEqualObjects(transformed,target,@"transformed items are %@",transformed);
 }
 
-- (void)testReduceWithBlock {
-	id(^accumlationBlock)(id, id) = ^(NSString *sum, NSString *obj) {
-		return [sum stringByAppendingString:obj];
-	};
-	NSString *concatenated = [_subject bk_reduce:@"" withBlock:accumlationBlock];
-	XCTAssertTrue([concatenated isEqualToString:@"122333"], @"concatenated string is %@", concatenated);
-}
 
 - (void)testAny {
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
 		BOOL match = ([obj intValue] == 22) ? YES : NO;
 		return match;
 	};
 	BOOL wasFound = [_subject bk_any:validationBlock];
-	XCTAssertEqual(_total,(NSInteger)3,@"total length of \"122\" is %ld", (long)_total);
 	XCTAssertTrue(wasFound,@"matched object was found");
 }
 
 - (void)testAll {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
+		[sync exec:^{
+			self->_total += [obj length];
+		}];
 		BOOL match = ([obj intValue] < 444) ? YES : NO;
 		return match;
 	};
@@ -143,8 +159,11 @@
 }
 
 - (void)testNone {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id) = ^(NSString *obj) {
-		self->_total += [obj length];
+		[sync exec:^{
+			self->_total += [obj length];
+		}];
 		BOOL match = ([obj intValue] < 1) ? YES : NO;
 		return match;
 	};
@@ -156,7 +175,7 @@
 
 - (void)testMin {
 	NSSet* numbers = [NSSet setWithArray:@[@(1), @(2), @(3)]];
-	NSNumber* min = [numbers bk_min:^(NSNumber* num){
+	NSNumber* min = [numbers.bk_concurrent bk_min:^(NSNumber* num){
 		return [num doubleValue];
 	}];
 	XCTAssert([min isEqual:@(1)], @"min should be 1");
@@ -165,10 +184,11 @@
 
 - (void)testMax {
 	NSSet* numbers = [NSSet setWithArray:@[@(1), @(2), @(3)]];
-	NSNumber* min = [numbers bk_max:^(NSNumber* num){
+	NSNumber* min = [numbers.bk_concurrent bk_max:^(NSNumber* num){
 		return [num doubleValue];
 	}];
 	XCTAssert([min isEqual:@(3)], @"min should be 1");
 }
+
 
 @end

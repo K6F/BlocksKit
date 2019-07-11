@@ -44,6 +44,20 @@
 		49BF12FF22D5E46F0037FB61 /* BKConcurrentIndexSet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 49BF12F822D5E4520037FB61 /* BKConcurrentIndexSet.h */; };
 		49BF130122D5EC0A0037FB61 /* BKConcurrentIndexSetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130022D5EC0A0037FB61 /* BKConcurrentIndexSetTest.m */; };
 		49BF130222D5EC0A0037FB61 /* BKConcurrentIndexSetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130022D5EC0A0037FB61 /* BKConcurrentIndexSetTest.m */; };
+		49BF130522D6D49B0037FB61 /* BKConcurrentSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BF130322D6D49B0037FB61 /* BKConcurrentSet.h */; };
+		49BF130622D6D49B0037FB61 /* BKConcurrentSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BF130322D6D49B0037FB61 /* BKConcurrentSet.h */; };
+		49BF130722D6D49B0037FB61 /* BKConcurrentSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130422D6D49B0037FB61 /* BKConcurrentSet.m */; };
+		49BF130822D6D49B0037FB61 /* BKConcurrentSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130422D6D49B0037FB61 /* BKConcurrentSet.m */; };
+		49BF130922D6D49B0037FB61 /* BKConcurrentSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130422D6D49B0037FB61 /* BKConcurrentSet.m */; };
+		49BF130C22D6D9940037FB61 /* BKLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BF130A22D6D9940037FB61 /* BKLock.h */; };
+		49BF130D22D6D9940037FB61 /* BKLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BF130A22D6D9940037FB61 /* BKLock.h */; };
+		49BF130E22D6D9940037FB61 /* BKLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.m */; };
+		49BF130F22D6D9940037FB61 /* BKLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.m */; };
+		49BF131022D6D9940037FB61 /* BKLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.m */; };
+		49BF131222D6E44C0037FB61 /* BKLockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF131122D6E44C0037FB61 /* BKLockTest.m */; };
+		49BF131322D6E44C0037FB61 /* BKLockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF131122D6E44C0037FB61 /* BKLockTest.m */; };
+		49BF131522D6E6ED0037FB61 /* BKConcurrentSetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF131422D6E6ED0037FB61 /* BKConcurrentSetTest.m */; };
+		49BF131622D6E6ED0037FB61 /* BKConcurrentSetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF131422D6E6ED0037FB61 /* BKConcurrentSetTest.m */; };
 		49E91DFB202AEBF30046C4DD /* QLPreviewController+BlocksKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA48C1B3A6657004B70F8 /* QLPreviewController+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4261B3A662A004B70F8 /* BKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB4CA4271B3A662A004B70F8 /* BKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4CA4051B3A662A004B70F8 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -376,6 +390,12 @@
 		49BF12F822D5E4520037FB61 /* BKConcurrentIndexSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKConcurrentIndexSet.h; sourceTree = "<group>"; };
 		49BF12F922D5E4520037FB61 /* BKConcurrentIndexSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKConcurrentIndexSet.m; sourceTree = "<group>"; };
 		49BF130022D5EC0A0037FB61 /* BKConcurrentIndexSetTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKConcurrentIndexSetTest.m; sourceTree = "<group>"; };
+		49BF130322D6D49B0037FB61 /* BKConcurrentSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKConcurrentSet.h; sourceTree = "<group>"; };
+		49BF130422D6D49B0037FB61 /* BKConcurrentSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKConcurrentSet.m; sourceTree = "<group>"; };
+		49BF130A22D6D9940037FB61 /* BKLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKLock.h; sourceTree = "<group>"; };
+		49BF130B22D6D9940037FB61 /* BKLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKLock.m; sourceTree = "<group>"; };
+		49BF131122D6E44C0037FB61 /* BKLockTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKLockTest.m; sourceTree = "<group>"; };
+		49BF131422D6E6ED0037FB61 /* BKConcurrentSetTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKConcurrentSetTest.m; sourceTree = "<group>"; };
 		DB4CA3F91B3A624B004B70F8 /* Common-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Common-Framework.xcconfig"; sourceTree = "<group>"; };
 		DB4CA3FA1B3A624B004B70F8 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
 		DB4CA3FB1B3A624B004B70F8 /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
@@ -560,6 +580,10 @@
 				49BF12D622D449300037FB61 /* BKConcurrentArray.m */,
 				49BF12F822D5E4520037FB61 /* BKConcurrentIndexSet.h */,
 				49BF12F922D5E4520037FB61 /* BKConcurrentIndexSet.m */,
+				49BF130322D6D49B0037FB61 /* BKConcurrentSet.h */,
+				49BF130422D6D49B0037FB61 /* BKConcurrentSet.m */,
+				49BF130A22D6D9940037FB61 /* BKLock.h */,
+				49BF130B22D6D9940037FB61 /* BKLock.m */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
@@ -692,6 +716,8 @@
 				49BF12DC22D459D10037FB61 /* BKConcurrentArrayTest.m */,
 				49BF12F522D5E2AD0037FB61 /* NSNumberTest.m */,
 				49BF130022D5EC0A0037FB61 /* BKConcurrentIndexSetTest.m */,
+				49BF131122D6E44C0037FB61 /* BKLockTest.m */,
+				49BF131422D6E6ED0037FB61 /* BKConcurrentSetTest.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -861,6 +887,7 @@
 				49BF12D422D445D40037FB61 /* BKConcurrentEnumerator.h in Headers */,
 				DB4CA50F1B3A6720004B70F8 /* BlocksKit+QuickLook.h in Headers */,
 				DB4CA4331B3A662A004B70F8 /* NSIndexSet+BlocksKit.h in Headers */,
+				49BF130622D6D49B0037FB61 /* BKConcurrentSet.h in Headers */,
 				DBA576A41B3A7B9700E41A6B /* BKDefines.h in Headers */,
 				49BF12D822D449300037FB61 /* BKConcurrentArray.h in Headers */,
 				DB4CA4B01B3A6657004B70F8 /* NSCache+BlocksKit.h in Headers */,
@@ -876,6 +903,7 @@
 				DB4CA4E21B3A6657004B70F8 /* UIControl+BlocksKit.h in Headers */,
 				DB4CA5111B3A6720004B70F8 /* BlocksKit+UIKit.h in Headers */,
 				DB4CA4BA1B3A6657004B70F8 /* NSObject+A2BlockDelegate.h in Headers */,
+				49BF130D22D6D9940037FB61 /* BKLock.h in Headers */,
 				DB4CA42E1B3A662A004B70F8 /* NSDictionary+BlocksKit.h in Headers */,
 				DB9B961C1B3A52A700940D20 /* BlocksKit.h in Headers */,
 				DB4CA4601B3A662A004B70F8 /* NSObject+BKBlockExecution.h in Headers */,
@@ -891,10 +919,12 @@
 				DB4CA4691B3A662A004B70F8 /* NSOrderedSet+BlocksKit.h in Headers */,
 				DB4CA4371B3A662A004B70F8 /* NSInvocation+BlocksKit.h in Headers */,
 				DB4CA4281B3A662A004B70F8 /* NSArray+BlocksKit.h in Headers */,
+				49BF130522D6D49B0037FB61 /* BKConcurrentSet.h in Headers */,
 				DB4CA4731B3A662A004B70F8 /* NSTimer+BlocksKit.h in Headers */,
 				DB4CA4AF1B3A6657004B70F8 /* NSCache+BlocksKit.h in Headers */,
 				DB5C6C481C52005900778E5F /* NSNumber+BlocksKit.h in Headers */,
 				DB4CA4BE1B3A6657004B70F8 /* NSObject+A2DynamicDelegate.h in Headers */,
+				49BF130C22D6D9940037FB61 /* BKLock.h in Headers */,
 				DB4CA4501B3A662A004B70F8 /* NSMutableOrderedSet+BlocksKit.h in Headers */,
 				DB4CA4261B3A662A004B70F8 /* BKMacros.h in Headers */,
 				DB4CA45A1B3A662A004B70F8 /* NSObject+BKAssociatedObjects.h in Headers */,
@@ -1145,10 +1175,12 @@
 				DB4CA4AD1B3A6657004B70F8 /* A2DynamicDelegate.m in Sources */,
 				DB4CA4BC1B3A6657004B70F8 /* NSObject+A2BlockDelegate.m in Sources */,
 				DB4CA4EE1B3A6657004B70F8 /* UIImage+BlocksKit.m in Sources */,
+				49BF130822D6D49B0037FB61 /* BKConcurrentSet.m in Sources */,
 				DB4CA4621B3A662A004B70F8 /* NSObject+BKBlockExecution.m in Sources */,
 				DB4CA43A1B3A662A004B70F8 /* NSInvocation+BlocksKit.m in Sources */,
 				DB4CA4DF1B3A6657004B70F8 /* UIBarButtonItem+BlocksKit.m in Sources */,
 				DB4CA4711B3A662A004B70F8 /* NSSet+BlocksKit.m in Sources */,
+				49BF130F22D6D9940037FB61 /* BKLock.m in Sources */,
 				49BF12D022D445720037FB61 /* BKConcurrentEnumerator.m in Sources */,
 				DB4CA4B21B3A6657004B70F8 /* NSCache+BlocksKit.m in Sources */,
 				DB4CA4441B3A662A004B70F8 /* NSMutableArray+BlocksKit.m in Sources */,
@@ -1179,12 +1211,14 @@
 				DB4CA5871B3A67A3004B70F8 /* NSObjectBlockObservationTest.m in Sources */,
 				DB4CA5901B3A67A3004B70F8 /* NSSetBlocksKitTest.m in Sources */,
 				49BF130222D5EC0A0037FB61 /* BKConcurrentIndexSetTest.m in Sources */,
+				49BF131622D6E6ED0037FB61 /* BKConcurrentSetTest.m in Sources */,
 				DB4CA5841B3A67A3004B70F8 /* NSObjectAssociatedObjectTest.m in Sources */,
 				DB4CA57B1B3A67A3004B70F8 /* NSMutableIndexSetBlocksKitTest.m in Sources */,
 				DB4CA56C1B3A67A3004B70F8 /* NSIndexSetBlocksKitTest.m in Sources */,
 				DB4CA5721B3A67A3004B70F8 /* NSMapTableBlocksKitTest.m in Sources */,
 				497436FD21EC46FB003EA4BA /* UIGestureRecognizerTest.m in Sources */,
 				49B083B5204D451B001EC49E /* NSUserDefaultsTest.m in Sources */,
+				49BF131322D6E44C0037FB61 /* BKLockTest.m in Sources */,
 				DB4CA5931B3A67A3004B70F8 /* NSTimerBlocksKitTest.m in Sources */,
 				DB4CA59C1B3A67A3004B70F8 /* A2DynamicDelegateTests.m in Sources */,
 				DB4CA5781B3A67A3004B70F8 /* NSMutableDictionaryBlocksKitTest.m in Sources */,
@@ -1226,8 +1260,10 @@
 				DB4CA4391B3A662A004B70F8 /* NSInvocation+BlocksKit.m in Sources */,
 				DB4CA4701B3A662A004B70F8 /* NSSet+BlocksKit.m in Sources */,
 				49B083B2204D41C8001EC49E /* NSUserDefaults+BlocksKit.m in Sources */,
+				49BF130722D6D49B0037FB61 /* BKConcurrentSet.m in Sources */,
 				DB4CA4B11B3A6657004B70F8 /* NSCache+BlocksKit.m in Sources */,
 				DB4CA4431B3A662A004B70F8 /* NSMutableArray+BlocksKit.m in Sources */,
+				49BF130E22D6D9940037FB61 /* BKLock.m in Sources */,
 				DB4CA4C01B3A6657004B70F8 /* NSObject+A2DynamicDelegate.m in Sources */,
 				DB4CA45C1B3A662A004B70F8 /* NSObject+BKAssociatedObjects.m in Sources */,
 				DB4CA43E1B3A662A004B70F8 /* NSMapTable+BlocksKit.m in Sources */,
@@ -1269,6 +1305,8 @@
 				DB4CA5A11B3A67A3004B70F8 /* A2DynamicTestClasses.m in Sources */,
 				DB4CA5A41B3A67A3004B70F8 /* NSCacheBlocksKitTest.m in Sources */,
 				DB4CA59E1B3A67A3004B70F8 /* A2DynamicTestClasses+A2BlockDelegate.m in Sources */,
+				49BF131522D6E6ED0037FB61 /* BKConcurrentSetTest.m in Sources */,
+				49BF131222D6E44C0037FB61 /* BKLockTest.m in Sources */,
 				DB4CA58C1B3A67A3004B70F8 /* NSOrderedSetBlocksKitTest.m in Sources */,
 				DB4CA5801B3A67A3004B70F8 /* NSMutableSetBlocksKitTest.m in Sources */,
 			);
@@ -1281,11 +1319,13 @@
 				DB4CA4EF1B3A6657004B70F8 /* UIImage+BlocksKit.m in Sources */,
 				DB4CA4311B3A662A004B70F8 /* NSDictionary+BlocksKit.m in Sources */,
 				DB4CA44F1B3A662A004B70F8 /* NSMutableIndexSet+BlocksKit.m in Sources */,
+				49BF131022D6D9940037FB61 /* BKLock.m in Sources */,
 				DB4CA4B81B3A6657004B70F8 /* NSURLConnection+BlocksKit.m in Sources */,
 				DB4CA45E1B3A662A004B70F8 /* NSObject+BKAssociatedObjects.m in Sources */,
 				DB4CA4AE1B3A6657004B70F8 /* A2DynamicDelegate.m in Sources */,
 				DB4CA43B1B3A662A004B70F8 /* NSInvocation+BlocksKit.m in Sources */,
 				DB4CA46D1B3A662A004B70F8 /* NSOrderedSet+BlocksKit.m in Sources */,
+				49BF130922D6D49B0037FB61 /* BKConcurrentSet.m in Sources */,
 				DB4CA4D11B3A6657004B70F8 /* QLPreviewController+BlocksKit.m in Sources */,
 				DB4CA4A91B3A6657004B70F8 /* A2BlockInvocation.m in Sources */,
 				DB4CA4E01B3A6657004B70F8 /* UIBarButtonItem+BlocksKit.m in Sources */,
