@@ -129,7 +129,7 @@ static const void *BKGestureRecognizerTargetSetted = &BKGestureRecognizerTargetS
 		setted = [settedValue boolValue];
 	}
 	
-	return settedValue;
+	return setted;
 }
 
 

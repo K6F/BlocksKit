@@ -53,11 +53,9 @@ FOUNDATION_EXPORT const unsigned char BlocksKitVersionString[];
 #import <BlocksKit/NSSet+BlocksKit.h>
 #import <BlocksKit/NSTimer+BlocksKit.h>
 #import <BlocksKit/NSCache+BlocksKit.h>
+#if !(TARGET_OS_WATCH)
 #import <BlocksKit/NSURLConnection+BlocksKit.h>
+#endif
 #import <BlocksKit/BKQueue.h>
 #import <BlocksKit/NSObject+A2BlockDelegate.h>
 #import <BlocksKit/NSUserDefaults+BlocksKit.h>
-#import <BlocksKit/BKConcurrentEnumerator.h>
-#import <BlocksKit/BKConcurrentArray.h>
-#import <BlocksKit/BKConcurrentIndexSet.h>
-
