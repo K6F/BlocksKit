@@ -1,28 +1,31 @@
 //
-//  NSDictionaryBlocksKitTest.m
-//  BlocksKit Unit Tests
+//  BKConcurrentDictionaryTest.m
+//  BlocksKit
 //
-//  Contributed by Kai Wu.
+//  Created by Andrew Romanov on 11/07/2019.
+//  Copyright © 2019 Zachary Waldowski and Pandamonia LLC. All rights reserved.
 //
 
-@import XCTest;
-@import BlocksKit;
+#import <XCTest/XCTest.h>
+#import "BKConcurrentDictionary.h"
+#import "BKLock.h"
 
-@interface NSDictionaryBlocksKitTest : XCTestCase
+
+@interface BKConcurrentDictionaryTest : XCTestCase
 
 @end
 
-@implementation NSDictionaryBlocksKitTest {
-	NSDictionary *_subject;
+@implementation BKConcurrentDictionaryTest {
+	BKConcurrentDictionary *_subject;
 	NSInteger _total;
 }
 
 - (void)setUp {
 	_subject = @{
-		@"1" : @(1),
-		@"2" : @(2),
-		@"3" : @(3),
-	};
+							 @"1" : @(1),
+							 @"2" : @(2),
+							 @"3" : @(3),
+							 }.bk_concurrent;
 	_total = 0;
 }
 
@@ -31,29 +34,33 @@
 }
 
 - (void)testEach {
+	BKLock* sync = [[BKLock alloc] init];
 	void(^keyValueBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
+		[sync exec:^{
+			self->_total += [value intValue] + [key intValue];
+		}];
 	};
-
+	
 	[_subject bk_each:keyValueBlock];
 	XCTAssertEqual(_total, (NSInteger)12, @"2*(1+2+3) = %ld", (long)_total);
 }
 
 - (void)testMatch {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 3 ? YES : NO;
 		return select;
 	};
-	NSDictionary *selected = [_subject bk_match:validationBlock];
-	XCTAssertEqual(_total, (NSInteger)2, @"2*1 = %ld", (long)_total);
-	XCTAssertEqualObjects(selected, @(1), @"selected value is %@", selected);
+	NSNumber *selected = [_subject bk_match:validationBlock];
+	XCTAssertTrue([selected isEqual:@(1)] || [selected isEqual:@(2)], @"selected value is %@", selected);
 }
 
 
 - (void)testMatchNone {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
+		[sync exec:^{
+			self->_total += [value intValue] + [key intValue];
+		}];
 		BOOL select = [value intValue] > 3 ? YES : NO;
 		return select;
 	};
@@ -64,8 +71,11 @@
 
 
 - (void)testSelect {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
+		[sync exec:^{
+			self->_total += [value intValue] + [key intValue];
+		}];
 		BOOL select = [value intValue] < 3 ? YES : NO;
 		return select;
 	};
@@ -75,9 +85,13 @@
 	XCTAssertEqualObjects(selected, target, @"selected dictionary is %@", selected);
 }
 
+
 - (void)testSelectedNone {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
+		[sync exec:^{
+			self->_total += [value intValue] + [key intValue];
+		}];
 		BOOL select = [value intValue] > 4 ? YES : NO;
 		return select;
 	};
@@ -86,9 +100,13 @@
 	XCTAssertTrue(selected.count == 0, @"none item is selected");
 }
 
+
 - (void)testReject {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
+		[sync exec:^{
+			self->_total += [value intValue] + [key intValue];
+		}];
 		BOOL reject = [value intValue] < 3 ? YES : NO;
 		return reject;
 	};
@@ -99,8 +117,11 @@
 }
 
 - (void)testRejectedAll {
+	BKLock* sync = [[BKLock alloc] init];
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
+		[sync exec:^{
+			self->_total += [value intValue] + [key intValue];
+		}];
 		BOOL reject = [value intValue] < 4 ? YES : NO;
 		return reject;
 	};
@@ -110,9 +131,14 @@
 }
 
 - (void)testMap {
+	BKLock* sync = [[BKLock alloc] init];
 	id(^transformBlock)(id, id) = ^id(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
-		return @(self->_total);
+		__block NSInteger val;
+		[sync exec:^{
+			self->_total += [value intValue] + [key intValue];
+			val = self->_total;
+		}];
+		return @(val);
 	};
 	NSDictionary *transformed = [_subject bk_map:transformBlock];
 	XCTAssertEqual(_total, (NSInteger)12, @"2*(1+2+3) = %ld", (long)_total);
@@ -122,45 +148,29 @@
 
 - (void)testAny {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 3 ? YES : NO;
 		return select;
 	};
 	BOOL isSelected = [_subject bk_any:validationBlock];
-	XCTAssertEqual(_total, (NSInteger)2, @"2*1 = %ld", (long)_total);
 	XCTAssertEqual(isSelected, YES, @"found selected value is %i", isSelected);
 }
 
 - (void)testAll {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 4 ? YES : NO;
 		return select;
 	};
 	BOOL allSelected = [_subject bk_all:validationBlock];
-	XCTAssertEqual(_total, (NSInteger)12, @"2*(1+2+3) = %ld", (long)_total);
 	XCTAssertTrue(allSelected, @"all values matched test");
 }
 
 - (void)testNone {
 	BOOL(^validationBlock)(id, id) = ^(id key,id value) {
-		self->_total += [value intValue] + [key intValue];
 		BOOL select = [value intValue] < 2 ? YES : NO;
 		return select;
 	};
 	BOOL noneSelected = [_subject bk_all:validationBlock];
-	XCTAssertEqual(_total, (NSInteger)6, @"2*(1+2) = %ld", (long)_total);
 	XCTAssertFalse(noneSelected, @"not all values matched test");
 }
-
-- (void)testGetterBlock
-{
-	NSNumber* result = [_subject bk_objectForKey:@"4"
-																		withGetter:^(void){
-																			return @(4);
-																		}];
-	XCTAssertEqualObjects(result, @(4));
-}
-
 
 @end
