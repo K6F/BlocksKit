@@ -45,9 +45,9 @@
 		49BF130922D6D49B0037FB61 /* BKConcurrentSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130422D6D49B0037FB61 /* BKConcurrentSet.m */; };
 		49BF130C22D6D9940037FB61 /* BKLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BF130A22D6D9940037FB61 /* BKLock.h */; };
 		49BF130D22D6D9940037FB61 /* BKLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 49BF130A22D6D9940037FB61 /* BKLock.h */; };
-		49BF130E22D6D9940037FB61 /* BKLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.m */; };
-		49BF130F22D6D9940037FB61 /* BKLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.m */; };
-		49BF131022D6D9940037FB61 /* BKLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.m */; };
+		49BF130E22D6D9940037FB61 /* BKLock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.mm */; };
+		49BF130F22D6D9940037FB61 /* BKLock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.mm */; };
+		49BF131022D6D9940037FB61 /* BKLock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.mm */; };
 		49BF131222D6E44C0037FB61 /* BKLockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF131122D6E44C0037FB61 /* BKLockTest.m */; };
 		49BF131322D6E44C0037FB61 /* BKLockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF131122D6E44C0037FB61 /* BKLockTest.m */; };
 		49BF131522D6E6ED0037FB61 /* BKConcurrentSetTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF131422D6E6ED0037FB61 /* BKConcurrentSetTest.m */; };
@@ -64,7 +64,7 @@
 		49BF133122D708C40037FB61 /* BKConcurrentIndexSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF12F922D5E4520037FB61 /* BKConcurrentIndexSet.m */; };
 		49BF133222D708C40037FB61 /* BKConcurrentSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130422D6D49B0037FB61 /* BKConcurrentSet.m */; };
 		49BF133322D708C40037FB61 /* BKConcurrentDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF131822D6EA440037FB61 /* BKConcurrentDictionary.m */; };
-		49BF133422D708C40037FB61 /* BKLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.m */; };
+		49BF133422D708C40037FB61 /* BKLock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49BF130B22D6D9940037FB61 /* BKLock.mm */; };
 		49BF133522D708C40037FB61 /* BKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 492A771F1F0E274100864353 /* BKQueue.m */; };
 		49BF133622D708C40037FB61 /* NSArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA4071B3A662A004B70F8 /* NSArray+BlocksKit.m */; };
 		49BF133722D708C40037FB61 /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4CA4091B3A662A004B70F8 /* NSDictionary+BlocksKit.m */; };
@@ -464,7 +464,7 @@
 		49BF130322D6D49B0037FB61 /* BKConcurrentSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKConcurrentSet.h; sourceTree = "<group>"; };
 		49BF130422D6D49B0037FB61 /* BKConcurrentSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKConcurrentSet.m; sourceTree = "<group>"; };
 		49BF130A22D6D9940037FB61 /* BKLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKLock.h; sourceTree = "<group>"; };
-		49BF130B22D6D9940037FB61 /* BKLock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKLock.m; sourceTree = "<group>"; };
+		49BF130B22D6D9940037FB61 /* BKLock.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BKLock.mm; sourceTree = "<group>"; };
 		49BF131122D6E44C0037FB61 /* BKLockTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKLockTest.m; sourceTree = "<group>"; };
 		49BF131422D6E6ED0037FB61 /* BKConcurrentSetTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKConcurrentSetTest.m; sourceTree = "<group>"; };
 		49BF131722D6EA440037FB61 /* BKConcurrentDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKConcurrentDictionary.h; sourceTree = "<group>"; };
@@ -669,7 +669,7 @@
 				49BF131722D6EA440037FB61 /* BKConcurrentDictionary.h */,
 				49BF131822D6EA440037FB61 /* BKConcurrentDictionary.m */,
 				49BF130A22D6D9940037FB61 /* BKLock.h */,
-				49BF130B22D6D9940037FB61 /* BKLock.m */,
+				49BF130B22D6D9940037FB61 /* BKLock.mm */,
 			);
 			path = Concurrency;
 			sourceTree = "<group>";
@@ -1343,7 +1343,7 @@
 				49BF133A22D708C40037FB61 /* NSMapTable+BlocksKit.m in Sources */,
 				49BF133C22D708C40037FB61 /* NSMutableDictionary+BlocksKit.m in Sources */,
 				49BF133022D708C40037FB61 /* BKConcurrentArray.m in Sources */,
-				49BF133422D708C40037FB61 /* BKLock.m in Sources */,
+				49BF133422D708C40037FB61 /* BKLock.mm in Sources */,
 				49BF133622D708C40037FB61 /* NSArray+BlocksKit.m in Sources */,
 				49BF134422D708C40037FB61 /* NSOrderedSet+BlocksKit.m in Sources */,
 				49BF134C22D708C40037FB61 /* NSObject+A2BlockDelegate.m in Sources */,
@@ -1397,7 +1397,7 @@
 				DB4CA43A1B3A662A004B70F8 /* NSInvocation+BlocksKit.m in Sources */,
 				DB4CA4DF1B3A6657004B70F8 /* UIBarButtonItem+BlocksKit.m in Sources */,
 				DB4CA4711B3A662A004B70F8 /* NSSet+BlocksKit.m in Sources */,
-				49BF130F22D6D9940037FB61 /* BKLock.m in Sources */,
+				49BF130F22D6D9940037FB61 /* BKLock.mm in Sources */,
 				DB4CA4B21B3A6657004B70F8 /* NSCache+BlocksKit.m in Sources */,
 				DB4CA4441B3A662A004B70F8 /* NSMutableArray+BlocksKit.m in Sources */,
 				DB5C6C4B1C52005900778E5F /* NSNumber+BlocksKit.m in Sources */,
@@ -1479,7 +1479,7 @@
 				49BF130722D6D49B0037FB61 /* BKConcurrentSet.m in Sources */,
 				DB4CA4B11B3A6657004B70F8 /* NSCache+BlocksKit.m in Sources */,
 				DB4CA4431B3A662A004B70F8 /* NSMutableArray+BlocksKit.m in Sources */,
-				49BF130E22D6D9940037FB61 /* BKLock.m in Sources */,
+				49BF130E22D6D9940037FB61 /* BKLock.mm in Sources */,
 				DB4CA4C01B3A6657004B70F8 /* NSObject+A2DynamicDelegate.m in Sources */,
 				DB4CA45C1B3A662A004B70F8 /* NSObject+BKAssociatedObjects.m in Sources */,
 				49BF131B22D6EA440037FB61 /* BKConcurrentDictionary.m in Sources */,
@@ -1537,7 +1537,7 @@
 				DB4CA4EF1B3A6657004B70F8 /* UIImage+BlocksKit.m in Sources */,
 				DB4CA4311B3A662A004B70F8 /* NSDictionary+BlocksKit.m in Sources */,
 				DB4CA44F1B3A662A004B70F8 /* NSMutableIndexSet+BlocksKit.m in Sources */,
-				49BF131022D6D9940037FB61 /* BKLock.m in Sources */,
+				49BF131022D6D9940037FB61 /* BKLock.mm in Sources */,
 				49BF134E22D708D20037FB61 /* BKQueue.m in Sources */,
 				DB4CA4B81B3A6657004B70F8 /* NSURLConnection+BlocksKit.m in Sources */,
 				49BF131D22D6EA440037FB61 /* BKConcurrentDictionary.m in Sources */,

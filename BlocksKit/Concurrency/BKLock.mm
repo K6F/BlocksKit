@@ -7,34 +7,23 @@
 //
 
 #import "BKLock.h"
+#import <mutex>
 
 
 @interface BKLock ()
-
-@property (nonatomic, strong) NSLock* lock;
+{
+	std::mutex _mut;
+}
 
 @end
 
 
 @implementation BKLock
 
-
-- (instancetype)init
-{
-	if (self = [super init])
-	{
-		_lock = [[NSLock alloc] init];
-	}
-	
-	return self;
-}
-
-
 - (void)exec:(void(^)(void))block
 {
-	[self.lock lock];
+	std::lock_guard<std::mutex> quard(_mut);
 	block();
-	[self.lock unlock];
 }
 
 @end
