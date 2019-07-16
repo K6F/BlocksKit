@@ -11,7 +11,7 @@
 
 @interface BKLock ()
 
-@property (nonatomic, strong) dispatch_semaphore_t lock;
+@property (nonatomic, strong) NSLock* lock;
 
 @end
 
@@ -23,7 +23,7 @@
 {
 	if (self = [super init])
 	{
-		_lock = dispatch_semaphore_create(1);
+		_lock = [[NSLock alloc] init];
 	}
 	
 	return self;
@@ -32,9 +32,9 @@
 
 - (void)exec:(void(^)(void))block
 {
-	dispatch_semaphore_wait(self.lock, DISPATCH_TIME_FOREVER);
+	[self.lock lock];
 	block();
-	dispatch_semaphore_signal(self.lock);
+	[self.lock unlock];
 }
 
 @end

@@ -136,13 +136,13 @@
 		__block NSInteger val;
 		[sync exec:^{
 			self->_total += [value intValue] + [key intValue];
-			val = self->_total;
+			val = [value integerValue] + [key integerValue];
 		}];
 		return @(val);
 	};
 	NSDictionary *transformed = [_subject bk_map:transformBlock];
 	XCTAssertEqual(_total, (NSInteger)12, @"2*(1+2+3) = %ld", (long)_total);
-	NSDictionary *target = @{ @"1": @(2), @"2": @(6), @"3": @(12) };
+	NSDictionary *target = @{ @"1": @(2), @"2": @(4), @"3": @(6) };
 	XCTAssertEqualObjects(transformed,target,@"transformed dictionary is %@",transformed);
 }
 
