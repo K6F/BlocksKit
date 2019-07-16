@@ -59,11 +59,28 @@
 	XCTAssertTrue(equal, @"must be equal arrays");
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testPerformanceArray {
+	BKLock* exec = [[BKLock alloc] init];
+	NSInteger countObjects = 100000;
+	NSMutableArray* objects = [[NSMutableArray alloc] initWithCapacity:countObjects];
+	NSMutableArray<NSNumber*>* objectsToSet = [[NSMutableArray alloc] initWithCapacity:countObjects];
+	for (NSInteger index = 0; index < countObjects; index++){
+		[objectsToSet addObject:@(index)];
+	}
+
+	[self measureMetrics:self.class.defaultPerformanceMetrics
+automaticallyStartMeasuring:NO
+							forBlock:^{
+								[self startMeasuring];
+								[objectsToSet enumerateObjectsWithOptions:NSEnumerationConcurrent
+																							 usingBlock:^(NSNumber* _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+																								 [exec exec:^{
+																									 [objects addObject:obj];
+																								 }];
+																							 }];
+								[self stopMeasuring];
+								[objects removeAllObjects];
+							}];
 }
 
 @end
