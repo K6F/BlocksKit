@@ -29,6 +29,12 @@
  @param block A void-returning code block that accepts no arguments.
 */
 - (void)bk_concurrently:(void(^)(void))block;
+/**
+ Performs a block `self` number of times
+ @param block A void-returning code block that accepts NSInteger argument.
+ from 0 to MAX(self-1, 0)
+ */
+- (void)bk_enumerate:(void(^)(NSInteger))block;
 
 
 @end
